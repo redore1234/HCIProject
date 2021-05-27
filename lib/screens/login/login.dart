@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
                 //margin: EdgeInsets.symmetric(horizontal: 40),
                 margin: const EdgeInsets.only(left: 35, bottom: 20, right: 35),
                 child: TextField(
-                  decoration: InputDecoration(labelText: "Username"),
+                  decoration: InputDecoration(labelText: "Tên đăng nhập"),
                 ),
               ),
               SizedBox(height: size.height * 0.001),
@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 margin: const EdgeInsets.only(left: 35, right: 35),
                 child: TextField(
-                  decoration: InputDecoration(labelText: "Password"),
+                  decoration: InputDecoration(labelText: "Mật khẩu"),
                   obscureText: true,
                 ),
               ),
@@ -59,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                         ])),
                     padding: const EdgeInsets.all(0),
                     child: Text(
-                      "LOGIN",
+                      "Đăng nhập",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -77,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                             builder: (context) => RegisterScreen()))
                   },
                   child: Text(
-                    "Don't Have an Account? Sign up",
+                    "Bạn chưa có tài khoản? Hãy đăng kí",
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,

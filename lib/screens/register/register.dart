@@ -16,14 +16,14 @@ class RegisterScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Background(
-                title: "REGISTER",
+                title: "ĐĂNG KÍ",
               ),
               SizedBox(height: size.height * 0.03),
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextField(
-                  decoration: InputDecoration(labelText: "Username"),
+                  decoration: InputDecoration(labelText: "Tên đăng nhập"),
                 ),
               ),
               SizedBox(height: size.height * 0.03),
@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextField(
-                  decoration: InputDecoration(labelText: "Password"),
+                  decoration: InputDecoration(labelText: "Mật khẩu"),
                   obscureText: true,
                 ),
               ),
@@ -41,7 +41,7 @@ class RegisterScreen extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextField(
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: "Mobile Number"),
+                  decoration: InputDecoration(labelText: "Số điện thoại"),
                 ),
               ),
               SizedBox(height: size.height * 0.03),
@@ -52,7 +52,7 @@ class RegisterScreen extends StatelessWidget {
                   left: 35,
                 ),
                 child: TextField(
-                  decoration: InputDecoration(labelText: "Name"),
+                  decoration: InputDecoration(labelText: "Họ và tên"),
                 ),
               ),
               SizedBox(height: size.height * 0.05),
@@ -77,7 +77,7 @@ class RegisterScreen extends StatelessWidget {
                         ])),
                     padding: const EdgeInsets.all(0),
                     child: Text(
-                      "SIGN UP",
+                      "Đăng kí",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -93,7 +93,7 @@ class RegisterScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => LoginScreen()))
                   },
                   child: Text(
-                    "Already Have an Account? Sign in",
+                    "Bạn đã có tài khoản rồi? Đăng nhập lại",
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
