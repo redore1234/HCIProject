@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:profile/screens/information/information.dart';
+import 'package:profile/screens/login/login.dart';
 import 'profile_picture.dart';
 
 class Body extends StatefulWidget {
@@ -33,7 +35,13 @@ class _ProfileState extends State<Body> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 color: Color(0xFFF5F6F9),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyInformationPage()),
+                  );
+                },
                 child: Row(
                   children: [
                     Icon(Icons.account_box_outlined),
@@ -125,7 +133,12 @@ class _ProfileState extends State<Body> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 color: Color(0xFFF5F6F9),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
                 child: Row(
                   children: [
                     Icon(Icons.logout_outlined),
