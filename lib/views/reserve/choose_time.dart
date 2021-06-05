@@ -1,3 +1,4 @@
+import 'package:date_picker_timeline/extra/color.dart';
 import 'package:flutter/material.dart';
 
 class GroupedButton extends StatefulWidget {
@@ -5,8 +6,11 @@ class GroupedButton extends StatefulWidget {
   _GroupedButtonState createState() => _GroupedButtonState();
 }
 
+final Color selectionColor = AppColors.defaultSelectionColor;
+
 class _GroupedButtonState extends State<GroupedButton> {
   int _selectedIndex = 0;
+  final Color selectionColor = AppColors.defaultSelectionColor;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +34,8 @@ class _GroupedButtonState extends State<GroupedButton> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               customRadio("8:00", 0),
-              customRadio("9:00", 0),
-              customRadio("10:00", 0),
+              customRadio("9:00", 1),
+              customRadio("10:00", 2),
             ],
           ),
           SizedBox(
@@ -50,9 +54,9 @@ class _GroupedButtonState extends State<GroupedButton> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              customRadio("11:00", 0),
-              customRadio("12:00", 0),
-              customRadio("13:00", 0),
+              customRadio("11:00", 3),
+              customRadio("12:00", 4),
+              customRadio("13:00", 5),
             ],
           ),
           SizedBox(
@@ -71,9 +75,9 @@ class _GroupedButtonState extends State<GroupedButton> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              customRadio("15:00", 0),
-              customRadio("16:00", 0),
-              customRadio("17:00", 0),
+              customRadio("15:00", 6),
+              customRadio("16:00", 7),
+              customRadio("17:00", 8),
             ],
           ),
         ],
@@ -82,19 +86,23 @@ class _GroupedButtonState extends State<GroupedButton> {
   }
 
   Widget customRadio(String time, int index) {
-    return OutlineButton(
-      onPressed: () {
-        setState(() {
-          _selectedIndex = index;
-        });
-      },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      borderSide: BorderSide(
-          color: _selectedIndex == index ? Colors.black : Colors.blueAccent),
-      child: Text(time,
-          style: TextStyle(
-              color:
-                  _selectedIndex == index ? Colors.black : Colors.blueAccent)),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: Container(
+        height: 30,
+        color: _selectedIndex == index ? Colors.blueAccent : Colors.white,
+        child: TextButton(
+          onPressed: () {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          child: Text(time,
+              style: TextStyle(
+                  color:
+                      _selectedIndex != index ? Colors.black : Colors.white)),
+        ),
+      ),
     );
   }
 }
