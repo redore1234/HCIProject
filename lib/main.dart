@@ -1,6 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:profile/screens/login/login.dart';
-import 'package:profile/screens/profile/profile.dart';
+import 'package:clinicbookingapp/views/global/main-tab-bar.dart';
+import 'helpers/constants.dart';
+import 'views/home/home.dart';
+import 'dart:ui';
+
+final GlobalKey<NavigatorState> firstTabNavKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> secondTabNavKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> thirdTabNavKey = GlobalKey<NavigatorState>();
 
 void main() {
   runApp(MyApp());
@@ -11,14 +18,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      title: 'Dental Clinic Booking',
       theme: ThemeData(
-        primaryColor: Color(0xFF2661FA),
-        scaffoldBackgroundColor: Colors.white,
+        primaryColor: Colors.white,
+//        textTheme: Theme.of(context).textTheme.apply(bodyColor: Constants.BLACK),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      //home: LoginScreen(),
-      home: ProfileScreen(),
+      home: new CupertinoApp(
+        home: MainTabBar(),
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+          DefaultMaterialLocalizations.delegate,
+          DefaultWidgetsLocalizations.delegate,
+        ],
+      ),
     );
   }
 }
