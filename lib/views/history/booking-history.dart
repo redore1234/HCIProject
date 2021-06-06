@@ -1,4 +1,3 @@
-import 'package:clinicbookingapp/views/global/shared-component.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/views/history/past-appointment-card.dart';
