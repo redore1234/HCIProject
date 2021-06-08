@@ -55,15 +55,19 @@ class NextAppointmentCard extends StatelessWidget {
               height: 8,
             ),
             // dentist info
-            Text("\u2022 Nha sĩ: Nguyen Duc Huy"),
+            Text("\u2022 Nha sĩ: Chúng tôi sẽ sắp xếp cho bạn nha sĩ tốt nhất"),
             SizedBox(
               height: 8,
             ),
-            // Nurse info
-            Text("\u2022 Y tá: Nguyen Duc Huy"),
-            SizedBox(
-              height: 8,
-            ),
+            // Text("\u2022 Nha sĩ: Nguyen Duc Huy"),
+            // SizedBox(
+            //   height: 8,
+            // ),
+            // // Nurse info
+            // Text("\u2022 Y tá: Nguyen Duc Huy"),
+            // SizedBox(
+            //   height: 8,
+            // ),
 
             Row(
               children: [

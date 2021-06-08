@@ -1,4 +1,4 @@
-import 'package:date_picker_timeline/extra/color.dart';
+import 'package:clinicbookingapp/views/reserve/reserve_step2.dart';
 import 'package:flutter/material.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'dart:ui';
@@ -79,7 +79,13 @@ class _ReserveScreenState extends State<ReserveScreen> {
                   height: 50,
                 ),
                 RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InfomationScreen()),
+                    );
+                  },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   textColor: Colors.white,

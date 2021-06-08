@@ -27,20 +27,12 @@ class MyHistoryBooking extends StatelessWidget {
               SizedBox(
                 height: 30.0,
               ),
-              Text(
-                'Lịch Sử Đặt Hẹn',
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.blueAccent,
-                ),
-                textAlign: TextAlign.left,
-              ),
-              SizedBox(
-                height: 20,
-              ),
               Container(
                 margin: EdgeInsets.only(left: 10, right: 10),
                 child: PastAppointmentCard(),
+              ),
+              SizedBox(
+                height: 60,
               ),
             ],
           ),

@@ -67,7 +67,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget _createNewsCard(String imageRef) {
+  Widget _createNewsCard(String imageRef, String content) {
     return Padding(
       padding: const EdgeInsets.only(left: 12.0, right: 12.0),
       child: Column(
@@ -85,7 +85,7 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text("News title")
+          Text(content)
         ],
       ),
     );
@@ -150,10 +150,14 @@ class Home extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png",
+                        "Đính đá nha khoa \n 700.000 VND"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png",
+                        "Tẩy trắng tại phòng khám \n 1.250.000VND"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png",
+                        "Hàm khung tiêu chuẩn \n 2.000.000	"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png",
+                        "Mặt dán sứ Press Veneer \n 6.000.000VND"),
                   ],
                 ),
               ),
@@ -179,10 +183,14 @@ class Home extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "den.png"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "braces.png"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "den.png"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "braces.png"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "den.png",
+                        "KHÁM VÀ TƯ VẤN RĂNG"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "braces.png",
+                        "PHỤC HÌNH RĂNG SỨ"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "den.png",
+                        "PHỤC HÌNH THÁO LẮP"),
+                    _createNewsCard(
+                        Constants.IMAGE_FOLDER_REF + "braces.png", "NHỔ RĂNG"),
                   ],
                 ),
               ),

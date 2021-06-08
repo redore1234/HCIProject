@@ -68,14 +68,32 @@ class PastAppointmentCard extends StatelessWidget {
                     height: 12,
                   ),
 
-                  // location of clinic
-                  Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // // location of clinic
+                  // Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // SizedBox(
+                  //   height: 12,
+                  // ),
+
+                  // Phonenumber of dental
+                  Text("\u2022 Số Điện Thoại: 09080056325"),
                   SizedBox(
                     height: 12,
                   ),
 
-                  // Phonenumber of dental
-                  Text("\u2022 Phone: 09080056325"),
+                  // code and name service
+                  Text("\u2022 Dịch Vụ: PHỤC HÌNH RĂNG SỨ - Răng sứ Titan"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // number of service
+                  Text("\u2022 Đơn Vị: 2 răng"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // total price
+                  Text("\u2022 Giá(VND): 4.000.000"),
                   SizedBox(
                     height: 12,
                   ),
@@ -160,14 +178,32 @@ class PastAppointmentCard extends StatelessWidget {
                     height: 12,
                   ),
 
-                  // location of clinic
-                  Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // // location of clinic
+                  // Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // SizedBox(
+                  //   height: 12,
+                  // ),
+
+                  // Phonenumber of dental
+                  Text("\u2022 Số Điện Thoại: 09080056325"),
                   SizedBox(
                     height: 12,
                   ),
 
-                  // Phonenumber of dental
-                  Text("\u2022 Phone: 09080056325"),
+                  // code and name service
+                  Text("\u2022 Dịch Vụ: PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // number of service
+                  Text("\u2022 Đơn Vị: 1 răng"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // total price
+                  Text("\u2022 Giá(VND): 1.000.000"),
                   SizedBox(
                     height: 12,
                   ),
@@ -252,14 +288,31 @@ class PastAppointmentCard extends StatelessWidget {
                     height: 12,
                   ),
 
-                  // location of clinic
-                  Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // // location of clinic
+                  // Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // SizedBox(
+                  //   height: 12,
+                  // ),
+
+                  // Phonenumber of dental
+                  Text("\u2022 Số Điện Thoại: 09080056325"),
                   SizedBox(
                     height: 12,
                   ),
 
-                  // Phonenumber of dental
-                  Text("\u2022 Phone: 09080056325"),
+                  Text("\u2022 Dịch Vụ: VIÊM NƯỚU - NHA CHU - Cạo vôi răng"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // number of service
+                  Text("\u2022 Đơn Vị: 1 hàm"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // total price
+                  Text("\u2022 Giá(VND): 300.000"),
                   SizedBox(
                     height: 12,
                   ),
@@ -344,14 +397,31 @@ class PastAppointmentCard extends StatelessWidget {
                     height: 12,
                   ),
 
-                  // location of clinic
-                  Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // // location of clinic
+                  // Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+                  // SizedBox(
+                  //   height: 12,
+                  // ),
+
+                  // Phonenumber of dental
+                  Text("\u2022 Số Điện Thoại: 09080056325"),
                   SizedBox(
                     height: 12,
                   ),
 
-                  // Phonenumber of dental
-                  Text("\u2022 Phone: 09080056325"),
+                  Text("\u2022 Dịch Vụ: NHỔ RĂNG - Nhổ răng khôn hàm trên"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // number of service
+                  Text("\u2022 Đơn Vị: 1 răng"),
+                  SizedBox(
+                    height: 12,
+                  ),
+
+                  // total price
+                  Text("\u2022 Giá(VND): 1.000.000"),
                   SizedBox(
                     height: 12,
                   ),
@@ -388,6 +458,9 @@ class PastAppointmentCard extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 30,
+            )
           ],
         ));
   }
