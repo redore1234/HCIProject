@@ -21,6 +21,7 @@ class _ReserveScreenState extends State<ReserveScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text("Bước 1"),
+          centerTitle: true,
           shadowColor: Colors.white,
         ),
         body: SingleChildScrollView(

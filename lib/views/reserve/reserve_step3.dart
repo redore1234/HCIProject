@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class InfomationDetailScreen extends StatefulWidget {
   String name, phone, address, note;
   InfomationDetailScreen(
       {Key key, this.name, this.address, this.phone, this.note})
       : super(key: key);
   @override
-  _InfomationDetailScreenState createState() =>
-      _InfomationDetailScreenState(name, address, phone, note);
+  _InfomationDetailScreenState createState() => _InfomationDetailScreenState();
 }
 
 class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
-  String name, phone, address, note;
-  _InfomationDetailScreenState(this.name, this.address, this.phone, this.note);
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: Text("Bước 3"),
+        centerTitle: true,
         shadowColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -57,81 +48,101 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        alignment: Alignment.topLeft,
-                        //margin: EdgeInsets.symmetric(horizontal: 40),
-                        margin: const EdgeInsets.only(left: 5, top: 20),
-                        child: Text(
-                          'Họ và tên: ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontSize: 17),
-                        ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 20),
+                          Container(
+                            alignment: Alignment.center,
+                            //margin: EdgeInsets.symmetric(horizontal: 40),
+                            margin: const EdgeInsets.only(left: 5, top: 30),
+                            child: Text(
+                              'Họ và tên: ',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(fontSize: 17),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            margin: const EdgeInsets.only(left: 5, top: 30),
+                            child: Text(
+                              widget.name,
+                            ),
+                          ),
+                        ],
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.only(left: 5, top: 10),
-                        child: Text(
-                          name,
+                      if (widget.address != null)
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 20),
+                            Container(
+                              alignment: Alignment.topLeft,
+                              //margin: EdgeInsets.symmetric(horizontal: 40),
+                              margin: const EdgeInsets.only(left: 5, top: 30),
+                              child: Text(
+                                'Địa chỉ: ',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(fontSize: 17),
+                              ),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              margin: const EdgeInsets.only(left: 5, top: 30),
+                              child: Text(
+                                widget.address,
+                              ),
+                            ),
+                          ],
                         ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 20),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            //margin: EdgeInsets.symmetric(horizontal: 40),
+                            margin: const EdgeInsets.only(left: 5, top: 30),
+                            child: Text(
+                              'Phone: ',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(fontSize: 17),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            margin: const EdgeInsets.only(left: 5, top: 30),
+                            child: Text(
+                              widget.phone,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(height: 20),
-                      Container(
-                        alignment: Alignment.topLeft,
-                        //margin: EdgeInsets.symmetric(horizontal: 40),
-                        margin: const EdgeInsets.only(left: 5, top: 10),
-                        child: Text(
-                          'Địa chỉ: ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontSize: 17),
+                      if (widget.note != null)
+                        Container(
+                          alignment: Alignment.topLeft,
+                          //margin: EdgeInsets.symmetric(horizontal: 40),
+                          margin: const EdgeInsets.only(
+                              left: 5, top: 30, bottom: 10),
+                          child: Text(
+                            'Lưu ý',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontSize: 17),
+                          ),
                         ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          address,
+                      if (widget.note != null)
+                        Container(
+                          alignment: Alignment.topLeft,
+                          margin: const EdgeInsets.only(
+                              left: 5, top: 5, bottom: 30),
+                          child: Text(
+                            widget.note,
+                            maxLines: 5,
+                            // decoration: InputDecoration(
+                            //     border: OutlineInputBorder(
+                            //         borderRadius: BorderRadius.circular(5))),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      Container(
-                        alignment: Alignment.topLeft,
-                        //margin: EdgeInsets.symmetric(horizontal: 40),
-                        margin: const EdgeInsets.only(left: 5, top: 10),
-                        child: Text(
-                          'Phone: ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.only(top: 10, left: 10),
-                        child: Text(
-                          phone,
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.topLeft,
-                        //margin: EdgeInsets.symmetric(horizontal: 40),
-                        margin:
-                            const EdgeInsets.only(left: 5, top: 30, bottom: 10),
-                        child: Text(
-                          'Lưu ý',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.only(top: 10, left: 10),
-                        child: Text(
-                          note,
-                          maxLines: 5,
-                          // decoration: InputDecoration(
-                          //     border: OutlineInputBorder(
-                          //         borderRadius: BorderRadius.circular(5))),
-                        ),
-                      ),
                       SizedBox(
                         height: 50,
                       ),

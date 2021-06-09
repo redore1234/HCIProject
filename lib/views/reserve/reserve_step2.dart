@@ -1,6 +1,5 @@
 import 'package:clinicbookingapp/views/reserve/reserve_step3.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/text.dart';
 
 class InfomationScreen extends StatefulWidget {
   @override
@@ -17,14 +16,8 @@ class _InfomationScreenState extends State<InfomationScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
         title: Text("Bước 2"),
+        centerTitle: true,
         shadowColor: Colors.white,
 
         // elevation: 0,
@@ -172,16 +165,35 @@ class _InfomationScreenState extends State<InfomationScreen> {
                         margin: const EdgeInsets.only(left: 70),
                         child: RaisedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => InfomationDetailScreen(
-                                        name: name,
-                                        address: address,
-                                        phone: phone,
-                                        note: note,
-                                      )),
-                            );
+                            // _formKey.currentState.validate();
+                            setState(() {
+                              if (_formKey.currentState.validate()) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        InfomationDetailScreen(
+                                      name: name,
+                                      address: address,
+                                      phone: phone,
+                                      note: note,
+                                    ),
+                                  ),
+                                );
+                              }
+                            });
+                            //   Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //       builder: (context) => InfomationDetailScreen(
+                            //         name: name,
+                            //         address: address,
+                            //         phone: phone,
+                            //         note: note,
+                            //       ),
+                            //     ),
+                            //   );
+                            // }
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(80.0)),
@@ -204,6 +216,41 @@ class _InfomationScreenState extends State<InfomationScreen> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
+                          // child: RaisedButton(
+                          //   onPressed: () {
+                          //     Navigator.push(
+                          //       context,
+                          //       MaterialPageRoute(
+                          //           builder: (context) => InfomationDetailScreen(
+                          //                 name: name,
+                          //                 address: address,
+                          //                 phone: phone,
+                          //                 note: note,
+                          //               )),
+                          //     );
+                          //   },
+                          //   shape: RoundedRectangleBorder(
+                          //       borderRadius: BorderRadius.circular(80.0)),
+                          //   textColor: Colors.white,
+                          //   padding: const EdgeInsets.all(0),
+                          //   child: Container(
+                          //     alignment: Alignment.center,
+                          //     height: 50.0,
+                          //     width: size.width * 0.5,
+                          //     decoration: new BoxDecoration(
+                          //         borderRadius: BorderRadius.circular(80.0),
+                          //         gradient: new LinearGradient(colors: [
+                          //           Color.fromARGB(255, 255, 136, 34),
+                          //           Color.fromARGB(255, 255, 177, 41)
+                          //         ])),
+                          //     padding: const EdgeInsets.all(0),
+                          //     child: Text(
+                          //       "Tiếp theo",
+                          //       textAlign: TextAlign.center,
+                          //       style: TextStyle(fontWeight: FontWeight.bold),
+                          //     ),
+                          //   ),
+                          // ),
                         ),
                       ),
                     ],
