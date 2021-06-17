@@ -69,44 +69,7 @@ class NextAppointmentCard extends StatelessWidget {
             //   height: 8,
             // ),
 
-            Row(
-              children: [
-                SizedBox(
-                  width: 2,
-                ),
-                FlatButton(
-                    onPressed: () {},
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: Colors.black)),
-                    child: Row(
-                      children: [
-                        Text("Đổi lịch hẹn"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(Icons.date_range_outlined)
-                      ],
-                    )),
-                SizedBox(
-                  width: 70,
-                ),
-                FlatButton(
-                    onPressed: () {},
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(color: Colors.black)),
-                    child: Row(
-                      children: [
-                        Text("Hủy lịch hẹn"),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(Icons.cancel_outlined)
-                      ],
-                    )),
-              ],
-            )
+
           ],
         ),
       ),
