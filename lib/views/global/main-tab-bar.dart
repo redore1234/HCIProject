@@ -1,4 +1,4 @@
-import 'package:clinicbookingapp/views/reserve/reverse_step1.dart';
+import 'package:clinicbookingapp/views/reserve/stepper_reserve.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/views/profile/profile-page.dart';
@@ -39,7 +39,7 @@ class _MainTabBarState extends State<MainTabBar> {
           //return CupertinoTabView(navigatorKey: secondTabNavKey, builder: (BuildContext context) => SchedulePage(),);
           return CupertinoTabView(
             navigatorKey: secondTabNavKey,
-            builder: (BuildContext context) => ReserveScreen(),
+            builder: (BuildContext context) => StepperReserve(),
           );
         } else {
           return CupertinoTabView(

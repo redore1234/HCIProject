@@ -21,9 +21,9 @@ class _GroupedButtonState extends State<GroupedButton> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            "Buổi sáng",
+            "Chọn thời gian phù hợp với bạn",
             style: TextStyle(
-              fontSize: 25,
+              fontSize: 20,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -39,16 +39,6 @@ class _GroupedButtonState extends State<GroupedButton> {
             ],
           ),
           SizedBox(
-            height: 30,
-          ),
-          Text(
-            "Buổi trưa",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          SizedBox(
             height: 20,
           ),
           Row(
@@ -56,18 +46,8 @@ class _GroupedButtonState extends State<GroupedButton> {
             children: [
               customRadio("11:00", 3),
               customRadio("12:00", 4),
-              customRadio("13:00", 5),
+              customRadio("14:00", 5),
             ],
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Text(
-            "Buổi chiều",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w500,
-            ),
           ),
           SizedBox(
             height: 20,
@@ -78,6 +58,17 @@ class _GroupedButtonState extends State<GroupedButton> {
               customRadio("15:00", 6),
               customRadio("16:00", 7),
               customRadio("17:00", 8),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              customRadio("18:00", 9),
+              customRadio("19:00", 10),
+              customRadio("20:00", 11),
             ],
           ),
         ],
