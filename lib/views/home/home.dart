@@ -4,44 +4,16 @@ import 'package:clinicbookingapp/views/home/next-appointment-card.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:clinicbookingapp/views/global/shared-component.dart';
+import 'package:clinicbookingapp/views/home/discount-cart.dart';
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SharedComponent.shared.buildAppBar("Dental Clinic Booking"),
-      body: buildBody(),
+      appBar: SharedComponent.shared.buildAppBar("Trang chủ"),
+      body: buildBody(context),
     );
   }
-
-  /*
-   bottom bar temp
-
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.only(left: 20, right: 20),
-        height: 60,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, -10),
-              blurRadius: 10,
-              color: Constants.GRAY
-            )
-          ]
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-//            SvgPicture.asset(Constants.HOME_ICON_REF, height: 30.0,color: Constants.SILVER,)
-            createIconButtonForTabBar(Constants.HOME_ICON_REF),
-            createIconButtonForTabBar(Constants.CALENDAR_ICON_REF),
-            createIconButtonForTabBar(Constants.MORE_ICON_REF),
-          ],
-        ),
-      ),
-
-   */
 
   IconButton createIconButtonForTabBar(String imageRef) {
     return IconButton(
@@ -62,12 +34,12 @@ class Home extends StatelessWidget {
         icon: SvgPicture.asset("assets/icons/tooth.svg"),
         onPressed: () {},
       ),
-      title: Text("Dental Clinic Booking"),
+//      title: Text("Home"),
       centerTitle: true,
     );
   }
 
-  Widget _createNewsCard(String imageRef, String content) {
+  Widget _createNewsCard(String imageRef, String title) {
     return Padding(
       padding: const EdgeInsets.only(left: 12.0, right: 12.0),
       child: Column(
@@ -85,13 +57,13 @@ class Home extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(content)
+          Text(title)
         ],
       ),
     );
   }
 
-  Container buildBody() {
+  Container buildBody(BuildContext context) {
     return Container(
       color: Colors.white,
       child: SingleChildScrollView(
@@ -104,7 +76,7 @@ class Home extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Text(
-                      "Fri, 21 May",
+                      "Thứ 6, ngày 21 tháng 5",
                       style: TextStyle(color: Constants.PRIMARY_COLOR),
                     ),
                     SizedBox(
@@ -130,46 +102,13 @@ class Home extends StatelessWidget {
               ),
 
               SizedBox(
-                height: 50,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: Text(
-                  "Ưu đãi",
-                  style: TextStyle(fontSize: 32),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              //3
-              // discount session
-              // horizontal list
-              Container(
-                height: 180,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png",
-                        "Đính đá nha khoa \n 700.000 VND"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png",
-                        "Tẩy trắng tại phòng khám \n 1.250.000VND"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png",
-                        "Hàm khung tiêu chuẩn \n 2.000.000	"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png",
-                        "Mặt dán sứ Press Veneer \n 6.000.000VND"),
-                  ],
-                ),
-              ),
-
-              SizedBox(
                 height: 40,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
                 child: Text(
-                  "Tin tức",
-                  style: TextStyle(fontSize: 32),
+                  "Phòng Khám Gần Đây",
+                  style: TextStyle(fontSize: 24),
                 ),
               ),
               SizedBox(
@@ -183,40 +122,186 @@ class Home extends StatelessWidget {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "den.png",
-                        "KHÁM VÀ TƯ VẤN RĂNG"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "braces.png",
-                        "PHỤC HÌNH RĂNG SỨ"),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "den.png",
-                        "PHỤC HÌNH THÁO LẮP"),
-                    _createNewsCard(
-                        Constants.IMAGE_FOLDER_REF + "braces.png", "NHỔ RĂNG"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop1.jpg",
+                        "phong kham A"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop2.jpg",
+                        "phong kham B"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop1.jpg",
+                        "phong kham C"),
+                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop2.jpg",
+                        "phong kham D"),
                   ],
                 ),
               ),
-              // 3
-              Image.asset(Constants.HOME_BACKGROUND),
+
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Text(
+                  "Ưu Đãi",
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
               SizedBox(
                 height: 10,
               ),
-              Center(
-                  child: Text(
-                "\"Chúng tôi mang tới cho bạn nụ cười\"",
-                style: TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
-              )),
+              //3
+              // discount session
+              // horizontal list
+              Container(
+                height: 110.0,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    // discount card 1
+                    DiscountCard(
+                      [
+                        Color(0xFF2E3862),
+                        Color(0xFF572A37),
+                      ],
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("300.000",
+                                    style: TextStyle(
+                                        decoration: TextDecoration.lineThrough,
+                                        color: Colors.white,
+                                        fontSize: 22.0)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text("12/7/2021",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12.0)),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(left: 12.0, top: 8.0),
+                                child: Text("Dịch vụ \ntrám răng\nchỉ còn",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 14.0)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 12.0, right: 8.0),
+                                child: Text("250.000",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 24.0)),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    // discount card 2
+                    DiscountCard(
+                      [
+                        Color(0xFF8E54E9),
+                        Color(0xFF4776E6),
+                      ],
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0, top: 18.0),
+                                child: Text("Giảm",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18.0)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 0.0, top: 32.0),
+                                child: Text("10%",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 38.0)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 0.0, top: 36.0),
+                                child: Text(" tất cả\n dịch vụ\n thứ 2\n hàng tuần",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12.0)),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
 
-              // 4
-//            Padding(
-//              padding: const EdgeInsets.only(left: 12, top: 24, right: 12),
-//              child: Column(children: <Widget>[
-//                Text("Your next appointments", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),),
-//
-//                InfoCard(),
-//                InfoCard(),
-//
-//
-//              ], crossAxisAlignment: CrossAxisAlignment.start,),
-//            ),
+                    // discount card 3
+                    DiscountCard(
+                      [
+                        Color(0xFF344173),
+                        Color(0xFF4A7E79),
+                      ],
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("400.000",
+                                    style: TextStyle(
+                                        decoration: TextDecoration.lineThrough,
+                                        color: Colors.white,
+                                        fontSize: 22.0)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text("12/7/2021",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12.0)),
+                              )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(left: 12.0, top: 8.0),
+                                child: Text("Dịch vụ \ncạo vôi răng\nchỉ còn",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 14.0)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 12.0, right: 8.0),
+                                child: Text("350.000",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 24.0)),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+
+//                  _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png", "Giam gia lan dau"),
+//                  _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png", "Giam gia thu 2"),
+//                  _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis1.png", "giam gia"),
+//                  _createNewsCard(Constants.IMAGE_FOLDER_REF + "dis2.png", "giam gia"),
+                  ],
+                ),
+              ),
 
               // bottom box
               SizedBox(
