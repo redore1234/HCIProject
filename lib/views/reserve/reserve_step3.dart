@@ -119,7 +119,7 @@ class _InfomationScreenState extends State<InfomationScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 Container(
                   margin: const EdgeInsets.only(left: 70),

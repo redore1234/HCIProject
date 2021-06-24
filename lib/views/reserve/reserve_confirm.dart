@@ -17,7 +17,7 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Thông tin lịch hẹn"),
+        title: Text("Thông tin đặt lịch"),
         centerTitle: true,
         shadowColor: Colors.white,
         leading: IconButton(
@@ -185,7 +185,7 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
                                 ])),
                             padding: const EdgeInsets.all(0),
                             child: Text(
-                              "Hoàn thành",
+                              "Hoàn tất",
                               textAlign: TextAlign.center,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),

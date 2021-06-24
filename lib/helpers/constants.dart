@@ -1,5 +1,3 @@
-
-
 import 'dart:ui';
 
 class Constants {
@@ -17,11 +15,8 @@ class Constants {
   static const String IMAGE_FOLDER_REF = "assets/images/";
   static const String ICON_FOLDER_RED = "assets/icons/";
 
-
   static const String HOME_BACKGROUND = "assets/images/home-background.png";
   static const String HOME_ICON_REF = "assets/icons/home.svg";
   static const String CALENDAR_ICON_REF = "assets/icons/calendar.svg";
   static const String MORE_ICON_REF = "assets/icons/more.svg";
-
-
 }

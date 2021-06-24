@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SharedComponent.shared.buildAppBar("Trang chủ"),
+      appBar: SharedComponent.shared.buildAppBar("Dental Clinic Booking"),
       body: buildBody(context),
     );
   }
@@ -189,7 +189,7 @@ class Home extends StatelessWidget {
                             children: [
                               Padding(
                                 padding:
-                                const EdgeInsets.only(left: 12.0, top: 8.0),
+                                    const EdgeInsets.only(left: 12.0, top: 8.0),
                                 child: Text("Dịch vụ \ntrám răng\nchỉ còn",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 14.0)),
@@ -219,21 +219,24 @@ class Home extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(left: 8.0, top: 18.0),
+                                padding:
+                                    const EdgeInsets.only(left: 8.0, top: 18.0),
                                 child: Text("Giảm",
                                     style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18.0)),
+                                        color: Colors.white, fontSize: 18.0)),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left: 0.0, top: 32.0),
+                                padding:
+                                    const EdgeInsets.only(left: 0.0, top: 32.0),
                                 child: Text("10%",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 38.0)),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left: 0.0, top: 36.0),
-                                child: Text(" tất cả\n dịch vụ\n thứ 2\n hàng tuần",
+                                padding:
+                                    const EdgeInsets.only(left: 0.0, top: 36.0),
+                                child: Text(
+                                    " tất cả\n dịch vụ\n thứ 2\n hàng tuần",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12.0)),
                               )
@@ -277,7 +280,7 @@ class Home extends StatelessWidget {
                             children: [
                               Padding(
                                 padding:
-                                const EdgeInsets.only(left: 12.0, top: 8.0),
+                                    const EdgeInsets.only(left: 12.0, top: 8.0),
                                 child: Text("Dịch vụ \ncạo vôi răng\nchỉ còn",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 14.0)),

@@ -1,3 +1,5 @@
+import 'package:clinicbookingapp/helpers/constants.dart';
+import 'package:clinicbookingapp/views/reserve/reserve_step2.dart';
 import 'package:clinicbookingapp/views/reserve/reserve_step3.dart';
 import 'package:clinicbookingapp/views/reserve/reverse_step1.dart';
 import 'package:fa_stepper/fa_stepper.dart';
@@ -36,9 +38,36 @@ class _StepperReserveState extends State<StepperReserve> {
             ),
             FAStep(
               title: Text('Dịch vụ'),
-              content: Column(
-                children: [
-                  Text('123'),
+              content: ServiceList(
+                service: [
+                  new Service(
+                      "Bọc răng sứ",
+                      Constants.IMAGE_FOLDER_REF + 'icon-boc-rang-su-1.png',
+                      false),
+                  new Service(
+                      "Cấy ghép implant",
+                      Constants.IMAGE_FOLDER_REF + 'trong-rang-implant.png',
+                      false),
+                  new Service(
+                      "Niềng răng thẩm mỹ",
+                      Constants.IMAGE_FOLDER_REF + 'nieng-rang-tham-my.png',
+                      false),
+                  new Service("Mặt dán sứ Veneer",
+                      Constants.IMAGE_FOLDER_REF + 'rang-su-veneer.png', false),
+                  new Service(
+                      "Tẩy trắng răng",
+                      Constants.IMAGE_FOLDER_REF + 'icon-tay-trang-rang-1.png',
+                      false),
+                  new Service(
+                      "Nhổ răng khôn",
+                      Constants.IMAGE_FOLDER_REF + 'icon-nho-rang-khon-1.png',
+                      false),
+                  new Service(
+                      "Bệnh lý nha chu",
+                      Constants.IMAGE_FOLDER_REF + 'icon-benh-ly-nha-chu.png',
+                      false),
+                  new Service("Điều trị tủy",
+                      Constants.IMAGE_FOLDER_REF + 'dieu-tri-tuy.png', false),
                 ],
               ),
               isActive: _currentStep >= 0,
