@@ -2,7 +2,6 @@ import 'package:clinicbookingapp/views/reserve/stepper_reserve.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PastAppointmentCard extends StatelessWidget {

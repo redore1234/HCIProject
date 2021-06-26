@@ -1,5 +1,4 @@
 import 'package:clinicbookingapp/views/global/background.dart';
-import 'package:clinicbookingapp/views/global/main-tab-bar.dart';
 import 'package:clinicbookingapp/views/register/register.dart';
 import 'package:flutter/material.dart';
 
@@ -57,12 +56,7 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                 child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MainTabBar()),
-                    );
-                  },
+                  onPressed: () => Navigator.of(context).pop(),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   textColor: Colors.white,
