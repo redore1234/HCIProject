@@ -114,7 +114,7 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
                             //margin: EdgeInsets.symmetric(horizontal: 40),
                             margin: const EdgeInsets.only(left: 5, top: 30),
                             child: Text(
-                              'Phone: ',
+                              'Số điện thoại: ',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
