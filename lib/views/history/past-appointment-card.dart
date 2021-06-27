@@ -2,6 +2,7 @@ import 'package:clinicbookingapp/views/reserve/stepper_reserve.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PastAppointmentCard extends StatelessWidget {
@@ -29,7 +30,7 @@ class PastAppointmentCard extends StatelessWidget {
                 "30/5/2021",
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
-                "Bọc răng sứ"),
+                "Bọc răng sứ", 4.5),
             SizedBox(
               height: 15.0,
             ),
@@ -40,7 +41,7 @@ class PastAppointmentCard extends StatelessWidget {
                 "26/5/2021",
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
-                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp"),
+                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp", 4),
             SizedBox(
               height: 15.0,
             ),
@@ -51,7 +52,7 @@ class PastAppointmentCard extends StatelessWidget {
                 "26/5/2021",
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
-                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp"),
+                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp", 3.5),
           ],
         ));
   }
@@ -63,7 +64,8 @@ class PastAppointmentCard extends StatelessWidget {
       String date,
       String address,
       String phone,
-      String service) {
+      String service,
+      double rating,) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -126,6 +128,16 @@ class PastAppointmentCard extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
+          Row(
+            children: [
+              Text("\u2022 Đánh giá: "),
+              _Rating(rating),
+            ],
+          ),
+
+          SizedBox(
+            height: 12,
+          ),
 
           // number of service
           // Text("\u2022 Đơn Vị: 2 răng"),
@@ -177,6 +189,179 @@ class PastAppointmentCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Container buttonRating(BuildContext context, size) {
+    final _formKey = GlobalKey<FormState>();
+    final myEditRating = TextEditingController();
+    double rating;
+
+    return Container(
+      // alignment: Alignment.center,
+      // margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+      child: RaisedButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context){
+                return AlertDialog(
+                  insetPadding: EdgeInsets.all(10),
+                  content: Stack(
+                    overflow: Overflow.visible,
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 350,
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            children: [
+                              Text('Đánh giá', style: TextStyle(fontSize: 35, color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                              SizedBox(height: 18,),
+                              _commentRating(rating),
+                              SizedBox(height: 25,),
+                              Text('Comment', style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold), ),
+                              SizedBox(height: 15,),
+                              TextFormField(
+                                maxLines: 3,decoration:
+                              InputDecoration(
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5))
+                              ),
+                              ),
+                              SizedBox(height: 25,),
+                              Row(
+                                children: [
+                                  SizedBox(width: 5,),
+                                  RaisedButton(
+                                    onPressed: ()  => Navigator.of(context).pop(),
+                                    shape:
+                                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                                    textColor: Colors.white,
+                                    padding: const EdgeInsets.all(0),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 50.0,
+                                      width: size.width * 0.25,
+                                      decoration: new BoxDecoration(
+                                        borderRadius: BorderRadius.circular(80.0),
+                                        gradient: new LinearGradient(colors: [
+                                          Color.fromARGB(255, 255, 136, 31),
+                                          Color.fromARGB(255, 255, 136, 31)
+                                        ]),
+                                      ),
+                                      padding: const EdgeInsets.all(0),
+                                      child: Text(
+                                        "Hủy bỏ",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 30,),
+                                  RaisedButton(
+                                    onPressed: () {
+
+                                    },
+                                    shape:
+                                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                                    textColor: Colors.white,
+                                    padding: const EdgeInsets.all(0),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 50.0,
+                                      width: size.width * 0.25,
+                                      decoration: new BoxDecoration(
+                                        borderRadius: BorderRadius.circular(80.0),
+                                        gradient: new LinearGradient(colors: [
+                                          Color.fromARGB(255, 255, 136, 31),
+                                          Color.fromARGB(255, 255, 136, 31)
+                                        ]),
+                                      ),
+                                      padding: const EdgeInsets.all(0),
+                                      child: Text(
+                                        "Cập nhật",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
+          );
+        },
+        shape:
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+        textColor: Colors.white,
+        padding: const EdgeInsets.all(0),
+        child: Container(
+          alignment: Alignment.center,
+          height: 50.0,
+          width: size.width * 0.35,
+          decoration: new BoxDecoration(
+            borderRadius: BorderRadius.circular(80.0),
+            gradient: new LinearGradient(colors: [
+              Color.fromARGB(255, 255, 136, 31),
+              Color.fromARGB(255, 255, 136, 31)
+            ]),
+          ),
+          padding: const EdgeInsets.all(0),
+          child: Text(
+            "Đánh giá",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+
+  RatingBar _Rating(double rating) {
+    return RatingBar.builder(
+      initialRating: rating,
+      minRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemSize: 40,
+      itemCount: 5,
+      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+      itemBuilder: (context, _) =>
+          Icon(
+            Icons.star,
+            color: Colors.amber,
+          ),
+      onRatingUpdate: null,
+    );
+  }
+
+  RatingBar _commentRating(double rating) {
+    return RatingBar.builder(
+      initialRating: 0,
+      minRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemSize: 40,
+      itemCount: 5,
+      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+      itemBuilder: (context, _) =>
+          Icon(
+            Icons.star,
+            color: Colors.amber,
+          ),
+      onRatingUpdate: (rating) {
+        rating = rating;
+        return rating;
+      },
     );
   }
 }
