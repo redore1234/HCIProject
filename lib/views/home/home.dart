@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/views/home/next-appointment-card.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:clinicbookingapp/views/global/shared-component.dart';
@@ -39,10 +40,31 @@ class Home extends StatelessWidget {
     );
   }
 
+  RatingBar _buildRatingBar(double rating) {
+    return RatingBar.builder(
+      initialRating: rating,
+      minRating: 1,
+      direction: Axis.horizontal,
+      allowHalfRating: true,
+      itemSize: 20,
+      itemCount: 5,
+      itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+      itemBuilder: (context, _) =>
+          Icon(
+            Icons.star,
+            color: Colors.amber,
+          ),
+      onRatingUpdate: (rating) {
+        
+      },
+    );
+  }
+
   Widget _createNewsCard(String imageRef, String title) {
     return Padding(
       padding: const EdgeInsets.only(left: 12.0, right: 12.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Expanded(
             child: Container(
@@ -55,9 +77,12 @@ class Home extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 8.0,
           ),
-          Text(title)
+          Text(title, style: TextStyle(fontSize: 17.0,),),
+          SizedBox(height: 2.0,),
+          Text("Khoảng cách: 3.5 km", style: TextStyle(color: Constants.GRAY),),
+          _buildRatingBar(2.5),
         ],
       ),
     );
