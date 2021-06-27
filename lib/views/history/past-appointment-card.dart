@@ -6,6 +6,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PastAppointmentCard extends StatelessWidget {
+  // PastAppointmentCard(Key key, this.rating):super(key:key);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,7 +31,9 @@ class PastAppointmentCard extends StatelessWidget {
                 "30/5/2021",
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
-                "Bọc răng sứ", 4.5),
+                "Bọc răng sứ",
+                4.5
+            ),
             SizedBox(
               height: 15.0,
             ),
@@ -41,7 +44,9 @@ class PastAppointmentCard extends StatelessWidget {
                 "26/5/2021",
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
-                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp", 4),
+                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp",
+                4
+            ),
             SizedBox(
               height: 15.0,
             ),
@@ -52,7 +57,9 @@ class PastAppointmentCard extends StatelessWidget {
                 "26/5/2021",
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
-                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp", 3.5),
+                "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp",
+                0
+            ),
           ],
         ));
   }
@@ -65,7 +72,8 @@ class PastAppointmentCard extends StatelessWidget {
       String address,
       String phone,
       String service,
-      double rating,) {
+      double rating,
+      ) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -118,13 +126,13 @@ class PastAppointmentCard extends StatelessWidget {
           ),
 
           // Phonenumber of dental
-          Text("\u2022 Số Điện Thoại: " + phone), //09080056325
+          Text("\u2022 Số điện thoại: " + phone), //09080056325
           SizedBox(
             height: 12,
           ),
 
           // code and name service
-          Text("\u2022 Dịch Vụ: " + service), //Bọc răng sứ
+          Text("\u2022 Dịch vụ: " + service), //Bọc răng sứ
           SizedBox(
             height: 12,
           ),
@@ -165,21 +173,22 @@ class PastAppointmentCard extends StatelessWidget {
 
   Container buttonBooking(BuildContext context, size) {
     return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-      child: RaisedButton(
+      // alignment: Alignment.center,
+      // margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+      child:
+      RaisedButton(
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => StepperReserve()));
         },
         shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
         textColor: Colors.white,
         padding: const EdgeInsets.all(0),
         child: Container(
           alignment: Alignment.center,
           height: 50.0,
-          width: size.width * 0.5,
+          width: size.width * 0.35,
           decoration: new BoxDecoration(
             borderRadius: BorderRadius.circular(80.0),
             gradient: new LinearGradient(colors: [
@@ -371,3 +380,4 @@ class PastAppointmentCard extends StatelessWidget {
     );
   }
 }
+
