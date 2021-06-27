@@ -150,8 +150,14 @@ class PastAppointmentCard extends StatelessWidget {
           // SizedBox(
           //   height: 12,
           // ),
-
-          buttonBooking(context, size)
+          Row(
+            children: [
+              SizedBox(width: 10,),
+              buttonBooking(context, size),
+              SizedBox(width: 60,),
+              buttonRating(context, size)
+            ],
+          ),
         ],
       ),
     );
