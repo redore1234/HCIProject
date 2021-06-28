@@ -21,9 +21,9 @@ class _MainTabBarState extends State<MainTabBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-          ),
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.calendar_today),
+//          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz),
           ),
@@ -36,11 +36,15 @@ class _MainTabBarState extends State<MainTabBar> {
             builder: (BuildContext context) => Home(),
           );
         } else if (index == 1) {
-          //return CupertinoTabView(navigatorKey: secondTabNavKey, builder: (BuildContext context) => SchedulePage(),);
           return CupertinoTabView(
             navigatorKey: secondTabNavKey,
-            builder: (BuildContext context) => StepperReserve(),
+            builder: (BuildContext context) => ProfilePage(),
           );
+          //return CupertinoTabView(navigatorKey: secondTabNavKey, builder: (BuildContext context) => SchedulePage(),);
+//          return CupertinoTabView(
+//            navigatorKey: secondTabNavKey,
+//            builder: (BuildContext context) => StepperReserve(),
+//          );
         } else {
           return CupertinoTabView(
             navigatorKey: thirdTabNavKey,
