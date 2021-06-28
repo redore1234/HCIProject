@@ -1,3 +1,4 @@
+import 'package:clinicbookingapp/views/reserve/stepper_reserve.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
@@ -43,93 +44,96 @@ class _DetailClinicScreenState extends State<DetailClinicScreen>{
       ),
       body: ListView(
         children: <Widget>[
-          Container(
-            width: size.width,
-            child: Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Container(
-                    child: Card(
-                      child: Image.asset(
-                        Constants.IMAGE_FOLDER_REF + clinic.image,
-                        height: 250,
-                        width: 350,
-                        alignment: Alignment.center,
-                      ),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
-                      color: Colors.lightBlueAccent,
-                    ),
-                  ),
-                  SizedBox(height: 20.0,),
-                  Container(
-                    child: Text(
-                      clinic.name,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 50.0),
+            child: Container(
+              width: size.width,
+              child: Card(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Container(
+                      child: Card(
+                        child: Image.asset(
+                          Constants.IMAGE_FOLDER_REF + clinic.image,
+                          height: 250,
+                          width: 350,
+                          alignment: Alignment.center,
+                        ),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                        color: Colors.lightBlueAccent,
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20.0,),
-                  Container(
-                    child: Text(
-                      'Số điện thoại : ' + clinic.phone,
-                      style: TextStyle(fontSize: 15),
-                    ),
-                  ),
-                  SizedBox(height: 5.0,),
-                  Container(
-                    child: Text('Email : ' + clinic.email,style: TextStyle(fontSize: 15),),
-                  ),
-                  SizedBox(height: 5.0,),
-                  Container(
-                    child: Text('Địa chỉ : ' + clinic.address, style: TextStyle(fontSize: 15),),
-                  ),
-                  SizedBox(height: 5.0,),
-                  Container(
-                    child: Text('Mô tả : ' + clinic.description,style: TextStyle(fontSize: 15),),
-                  ),
-                  SizedBox(height: 10.0,),
-                  Container(
-                    child: Card(
-
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Đánh giá tổng quan : ' ,
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                  _totalRating(clinic.totalRating),
-                                ],
-                              ),
-                            ),
-                            SizedBox(height: 10),
-                            Text('3 Đánh giá' , style: TextStyle(fontSize: 15)),
-                            SizedBox(height: 20),
-                            Container(
-                              child: ListCommentRating(rating: [
-                                new Rating('Nguyễn Ngọc Linh', 'Dịch vụ cạo vôi răng rẻ và tốt', 4, 'user.png'),
-                                new Rating('Phạm Minh Bảo', 'Dịch vụ nhổ răng khôn rẻ', 4, 'user.png'),
-                                new Rating('Nguyễn Trung Tín', 'Dịch vụ niềng răng rẻ', 4, 'user.png')
-                              ],
-                              ),
-                            ),
-                          ]
+                    SizedBox(height: 20.0,),
+                    Container(
+                      child: Text(
+                        clinic.name,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
                         ),
                       ),
                     ),
-                    //child: RatingBar.builder(itemBuilder: , onRatingUpdate: onRatingUpdate),
-                  ),
-                ],
+                    SizedBox(height: 20.0,),
+                    Container(
+                      child: Text(
+                        'Hotline : ' + clinic.phone,
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                    SizedBox(height: 5.0,),
+                    Container(
+                      child: Text('Email : ' + clinic.email,style: TextStyle(fontSize: 15),),
+                    ),
+                    SizedBox(height: 5.0,),
+                    Container(
+                      child: Text('Địa chỉ : ' + clinic.address, style: TextStyle(fontSize: 15),),
+                    ),
+                    SizedBox(height: 5.0,),
+                    Container(
+                      child: Text('Mô tả : ' + clinic.description,style: TextStyle(fontSize: 15),),
+                    ),
+                    SizedBox(height: 10.0,),
+                    Container(
+                      child: Card(
+
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Tổng quan : ' ,
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    _totalRating(clinic.totalRating),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text('3 Đánh giá' , style: TextStyle(fontSize: 15)),
+                              SizedBox(height: 20),
+                              Container(
+                                child: ListCommentRating(rating: [
+                                  new Rating('Nguyễn Ngọc Linh', 'Dịch vụ cạo vôi răng rẻ và tốt', 4, 'user.png'),
+                                  new Rating('Phạm Minh Bảo', 'Dịch vụ nhổ răng khôn rẻ', 4, 'user.png'),
+                                  new Rating('Nguyễn Trung Tín', 'Dịch vụ niềng răng rẻ', 4, 'user.png')
+                                ],
+                                ),
+                              ),
+                            ]
+                          ),
+                        ),
+                      ),
+                      //child: RatingBar.builder(itemBuilder: , onRatingUpdate: onRatingUpdate),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -148,29 +152,37 @@ class _DetailClinicScreenState extends State<DetailClinicScreen>{
           // ),
         ],
       ),
-        floatingActionButton: Stack(
-          children: <Widget>[
-              Align(
-                alignment: Alignment.bottomRight,
-                child: FloatingActionButton.extended(
-                  onPressed: (){
-                    //Add code here
-                  },
-                  label: const Text('Đặt lịch'),
-                  icon: const Icon(Icons.app_registration),
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(bottom: 40.0),
+          child: Stack(
+            children: <Widget>[
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: FloatingActionButton.extended(
+                    onPressed: (){
+                      //Add code here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => StepperReserve()),
+                      );
+                    },
+                    label: const Text('Đặt lịch'),
+                    icon: const Icon(Icons.app_registration),
+                  ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                heightFactor: 13.6,
-                child: FloatingActionButton(
-                  onPressed: (){
-                    //Add code here
-                  },
-                  child: const Icon(Icons.phone),
-                ),
-              ),
-          ],
+//                Align(
+//                  alignment: Alignment.bottomRight,
+//                  heightFactor: 13.6,
+//                  child: FloatingActionButton(
+//                    onPressed: (){
+//                      //Add code here
+//                    },
+//                    child: const Icon(Icons.phone),
+//                  ),
+//                ),
+            ],
+          ),
         )
          // FloatingActionButton.extended(
          //   onPressed: (){

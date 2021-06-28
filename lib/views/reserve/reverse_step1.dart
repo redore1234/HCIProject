@@ -78,9 +78,9 @@ class _GroupedButtonState extends State<GroupedButton> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              customRadio("8:00", 0),
-              customRadio("9:00", 1),
-              customRadio("10:00", 2),
+              customRadio("7:00 - 8:00", 0),
+              customRadio("8:00 - 9:00", 1),
+              customRadio("9:00 - 10:00", 2),
             ],
           ),
           SizedBox(
@@ -89,9 +89,9 @@ class _GroupedButtonState extends State<GroupedButton> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              customRadio("11:00", 3),
-              customRadio("12:00", 4),
-              customRadio("14:00", 5),
+              customRadio("13:00 - 14:00", 3),
+              customRadio("14:00 - 15:00", 4),
+              customRadio("15:00 - 16:00", 5),
             ],
           ),
           SizedBox(
@@ -100,9 +100,9 @@ class _GroupedButtonState extends State<GroupedButton> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              customRadio("15:00", 6),
-              customRadio("16:00", 7),
-              customRadio("17:00", 8),
+              customRadio("16:00 - 17:00", 6),
+              customRadio("17:00 - 18:00", 7),
+              customRadio("18:00 - 19:00", 8),
             ],
           ),
           SizedBox(
@@ -111,9 +111,9 @@ class _GroupedButtonState extends State<GroupedButton> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              customRadio("18:00", 9),
-              customRadio("19:00", 10),
-              customRadio("20:00", 11),
+              customRadio("19:00 - 20:00", 9),
+//              customRadio("19:00", 10),
+//              customRadio("20:00", 11),
             ],
           ),
         ],

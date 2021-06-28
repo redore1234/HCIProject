@@ -1,3 +1,5 @@
+
+import 'package:clinicbookingapp/views/detail/detail-clinic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/views/home/next-appointment-card.dart';
@@ -55,35 +57,55 @@ class Home extends StatelessWidget {
             color: Colors.amber,
           ),
       onRatingUpdate: (rating) {
-        
+
       },
     );
   }
 
-  Widget _createNewsCard(String imageRef, String title) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 12.0, right: 12.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: new BorderRadius.all(const Radius.circular(12)),
-                color: Colors.transparent,
+  Widget _createNewsCard(String imageRef, String title, BuildContext context) {
+//    class Clinic{
+//    String name;
+//    String phone;
+//    String email;
+//    String image;
+//    String address;
+//    String description;
+//    double totalRating;
+//    Clinic(this.image, this.name, this.phone, this.email, this.description, this.address, this.totalRating);
+//    }
+    var sampleClinic = new Clinic("hop1.jpg", "Phòng Khám Thủ Đức", "1234-5678", "clinic@gmail.com", "Phòng khám dược trang bị cơ sở vật chất hiện đại, cùng với đội ngũ nhân viên có tay nghề cao luôn sẵn sàng phục vụ quý khách", "123 Phạm Văng Đồng, phường TCH, quận Thủ Đức", 4.5);
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => DetailClinicScreen(sampleClinic)),
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: new BorderRadius.all(const Radius.circular(12)),
+                  color: Colors.transparent,
+                ),
+                width: 160.0,
+                child: Image.asset(imageRef),
               ),
-              width: 160.0,
-              child: Image.asset(imageRef),
             ),
-          ),
-          SizedBox(
-            height: 8.0,
-          ),
-          Text(title, style: TextStyle(fontSize: 17.0,),),
-          SizedBox(height: 2.0,),
-          Text("Khoảng cách: 3.5 km", style: TextStyle(color: Constants.GRAY),),
-          _buildRatingBar(2.5),
-        ],
+            SizedBox(
+              height: 8.0,
+            ),
+            Text(title, style: TextStyle(fontSize: 17.0,),),
+            SizedBox(height: 2.0,),
+            Text("Khoảng cách: 3.5 km", style: TextStyle(color: Constants.GRAY),),
+            _buildRatingBar(2.5),
+          ],
+        ),
       ),
     );
   }
@@ -148,13 +170,13 @@ class Home extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop1.jpg",
-                        "phong kham A"),
+                        "phong kham A", context),
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop2.jpg",
-                        "phong kham B"),
+                        "phong kham B", context),
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop1.jpg",
-                        "phong kham C"),
+                        "phong kham C", context),
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop2.jpg",
-                        "phong kham D"),
+                        "phong kham D", context),
                   ],
                 ),
               ),

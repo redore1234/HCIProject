@@ -98,28 +98,32 @@ class _StepperReserveState extends State<StepperReserve> {
 
   Widget changeButtonName(BuildContext context,
       {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        _currentStep < 2
-            ? TextButton(
-                onPressed: onStepContinue,
-                child: const Text(
-                  'Tiếp tục',
-                  style: TextStyle(fontSize: 15),
-                ),
-              )
-            : SizedBox.shrink(),
-        _currentStep > 0
-            ? TextButton(
-                onPressed: onStepCancel,
-                child: const Text(
-                  'Trở lại',
-                  style: TextStyle(fontSize: 15),
-                ),
-              )
-            : SizedBox.shrink()
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 40.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+
+          _currentStep > 0
+              ? TextButton(
+                  onPressed: onStepCancel,
+                  child: const Text(
+                    'Trở lại',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                )
+              : SizedBox.shrink(),
+          _currentStep < 2
+              ? TextButton(
+            onPressed: onStepContinue,
+            child: const Text(
+              'Tiếp tục',
+              style: TextStyle(fontSize: 15),
+            ),
+          )
+              : SizedBox.shrink(),
+        ],
+      ),
     );
   }
 
