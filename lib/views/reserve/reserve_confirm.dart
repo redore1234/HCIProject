@@ -1,3 +1,4 @@
+import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -129,6 +130,28 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
                           ),
                         ],
                       ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 20),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            //margin: EdgeInsets.symmetric(horizontal: 40),
+                            margin: const EdgeInsets.only(left: 5, top: 30),
+                            child: Text(
+                              'Thời gian: ',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            margin: const EdgeInsets.only(left: 5, top: 30),
+                            child: Text("30/6/2021" + " - " + "18:00"),
+                          ),
+                        ],
+                      ),
                       if (widget.note != null)
                         Container(
                           alignment: Alignment.topLeft,
@@ -180,8 +203,10 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
                             decoration: new BoxDecoration(
                                 borderRadius: BorderRadius.circular(80.0),
                                 gradient: new LinearGradient(colors: [
-                                  Color.fromARGB(255, 255, 136, 34),
-                                  Color.fromARGB(255, 255, 177, 41)
+                                  Constants.PRIMARY_COLOR,
+                                  Constants.HEAVY_BLUE
+                                  // Color.fromARGB(255, 255, 136, 34),
+                                  // Color.fromARGB(255, 255, 177, 41)
                                 ])),
                             padding: const EdgeInsets.all(0),
                             child: Text(

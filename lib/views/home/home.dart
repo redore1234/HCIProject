@@ -1,4 +1,3 @@
-
 import 'package:clinicbookingapp/views/detail/detail-clinic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -51,21 +50,19 @@ class Home extends StatelessWidget {
       itemSize: 20,
       itemCount: 5,
       itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-      itemBuilder: (context, _) =>
-          Icon(
-            Icons.star,
-            color: Colors.amber,
-          ),
-      onRatingUpdate: (rating) {
-
-      },
+      itemBuilder: (context, _) => Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
+      onRatingUpdate: (rating) {},
     );
   }
 
-  Widget _createHotServiceCard(String imageRef, String title, String nameClinic, String description, double rating,BuildContext context) {
+  Widget _createHotServiceCard(String imageRef, String title, String nameClinic,
+      String description, double rating, BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10.0),
         color: Colors.white,
       ),
@@ -88,19 +85,31 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
-            SizedBox(height: 8.0,),
-            Text(title,
+            SizedBox(
+              height: 8.0,
+            ),
+            Text(
+              title,
               style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0,),
-            Text('Tại ' + nameClinic,
+            SizedBox(
+              height: 8.0,
+            ),
+            Text(
+              'Tại ' + nameClinic,
               style: TextStyle(fontSize: 15, color: Constants.GRAY),
             ),
-            SizedBox(height: 8.0,),
+            SizedBox(
+              height: 8.0,
+            ),
             Text(description),
-            SizedBox(height: 8.0,),
+            SizedBox(
+              height: 8.0,
+            ),
             _buildRatingBar(rating),
-            SizedBox(height: 8.0,),
+            SizedBox(
+              height: 8.0,
+            ),
           ],
         ),
       ),
@@ -118,9 +127,16 @@ class Home extends StatelessWidget {
 //    double totalRating;
 //    Clinic(this.image, this.name, this.phone, this.email, this.description, this.address, this.totalRating);
 //    }
-    var sampleClinic = new Clinic("hop1.jpg", "Phòng Khám Thủ Đức", "1234-5678", "clinic@gmail.com", "Phòng khám dược trang bị cơ sở vật chất hiện đại, cùng với đội ngũ nhân viên có tay nghề cao luôn sẵn sàng phục vụ quý khách", "123 Phạm Văng Đồng, phường TCH, quận Thủ Đức", 4.5);
+    var sampleClinic = new Clinic(
+        "hop1.jpg",
+        "Nha khoa Thủ Đức",
+        "1234-5678",
+        "clinic@gmail.com",
+        "Phòng khám dược trang bị cơ sở vật chất hiện đại, cùng với đội ngũ nhân viên có tay nghề cao luôn sẵn sàng phục vụ quý khách",
+        "123 Phạm Văng Đồng, phường TCH, quận Thủ Đức",
+        4.0);
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -145,10 +161,20 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
-            Text(title, style: TextStyle(fontSize: 17.0,),),
-            SizedBox(height: 2.0,),
-            Text("Khoảng cách: 3.5 km", style: TextStyle(color: Constants.GRAY),),
-            _buildRatingBar(2.5),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 17.0,
+              ),
+            ),
+            SizedBox(
+              height: 2.0,
+            ),
+            Text(
+              "Khoảng cách: 3.5 km",
+              style: TextStyle(color: Constants.GRAY),
+            ),
+            _buildRatingBar(4.0),
           ],
         ),
       ),
@@ -199,7 +225,7 @@ class Home extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
                 child: Text(
-                  "Phòng Khám Gần Đây",
+                  "Nha Khoa Gần Đây",
                   style: TextStyle(fontSize: 24),
                 ),
               ),
@@ -215,13 +241,13 @@ class Home extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop1.jpg",
-                        "phong kham A", context),
+                        "Nha khoa Thủ Đức", context),
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop2.jpg",
-                        "phong kham B", context),
+                        "Nha khoa B", context),
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop1.jpg",
-                        "phong kham C", context),
+                        "Nha khoa C", context),
                     _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop2.jpg",
-                        "phong kham D", context),
+                        "Nha khoa D", context),
                   ],
                 ),
               ),
@@ -297,7 +323,7 @@ class Home extends StatelessWidget {
                           ),
                           Padding(
                             padding: EdgeInsets.all(6.0),
-                            child: Text('Nha khoa Vinh sơn',
+                            child: Text('Nha khoa Vinh Sơn',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 15.0)),
                           ),
@@ -425,18 +451,44 @@ class Home extends StatelessWidget {
                   style: TextStyle(fontSize: 24),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 height: 220,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    _createHotServiceCard('cay-ghep-implant.jpg', 'CẤY GHÉP IMPLANT', 'nha khoa Đại Nam', 'Giải pháp tối ưu cho người mất răng', 4, context),
-                    SizedBox(width: 10,),
-                    _createHotServiceCard('khoaThammi.jpg', 'Răng sứ thẩm mĩ', 'nha khoa Vĩnh Sơn', 'Biến nụ cười bạn trở nên tỏa sáng', 4, context),
-                    SizedBox(width: 10,),
-                    _createHotServiceCard('niengrang.jpg', 'Niềng răng dây sắt', 'nha khoa Nam Á', 'Giải phát tối ưu khắc phụ khuyết điểm', 4, context),
-                    SizedBox(width: 10,),
+                    _createHotServiceCard(
+                        'cay-ghep-implant.jpg',
+                        'CẤY GHÉP IMPLANT',
+                        'nha khoa Đại Nam',
+                        'Giải pháp tối ưu cho người mất răng',
+                        4,
+                        context),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    _createHotServiceCard(
+                        'khoaThammi.jpg',
+                        'Răng sứ thẩm mĩ',
+                        'nha khoa Vĩnh Sơn',
+                        'Biến nụ cười bạn trở nên tỏa sáng',
+                        4,
+                        context),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    _createHotServiceCard(
+                        'niengrang.jpg',
+                        'Niềng răng dây sắt',
+                        'nha khoa Nam Á',
+                        'Giải phát tối ưu khắc phụ khuyết điểm',
+                        4,
+                        context),
+                    SizedBox(
+                      width: 10,
+                    ),
                   ],
                 ),
               ),

@@ -1,3 +1,4 @@
+import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:clinicbookingapp/views/global/background.dart';
 import 'package:clinicbookingapp/views/register/register.dart';
 import 'package:flutter/material.dart';
@@ -69,8 +70,10 @@ class LoginScreen extends StatelessWidget {
                         //color: Colors.blue,
                         borderRadius: BorderRadius.circular(80.0),
                         gradient: new LinearGradient(colors: [
-                          Color.fromARGB(255, 255, 136, 31),
-                          Color.fromARGB(255, 255, 136, 31)
+                          Constants.PRIMARY_COLOR,
+                          Constants.HEAVY_BLUE
+                          // Color.fromARGB(255, 255, 136, 34),
+                          // Color.fromARGB(255, 255, 177, 41)
                         ])),
                     padding: const EdgeInsets.all(0),
                     child: Text(

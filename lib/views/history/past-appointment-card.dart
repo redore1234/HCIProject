@@ -32,8 +32,7 @@ class PastAppointmentCard extends StatelessWidget {
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
                 "Bọc răng sứ",
-                4.5
-            ),
+                4.5),
             SizedBox(
               height: 15.0,
             ),
@@ -45,8 +44,7 @@ class PastAppointmentCard extends StatelessWidget {
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
                 "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp",
-                4
-            ),
+                4),
             SizedBox(
               height: 15.0,
             ),
@@ -58,22 +56,21 @@ class PastAppointmentCard extends StatelessWidget {
                 "123 Nguyễn Huệ, Q. ABC - TP.HCM",
                 "09080056325",
                 "PHỤC HÌNH THÁO LẮP - Răng sứ tháo lắp",
-                0
-            ),
+                0),
           ],
         ));
   }
 
   Container bookingHistoryComponent(
-      BuildContext context,
-      size,
-      String doctorName,
-      String date,
-      String address,
-      String phone,
-      String service,
-      double rating,
-      ) {
+    BuildContext context,
+    size,
+    String doctorName,
+    String date,
+    String address,
+    String phone,
+    String service,
+    double rating,
+  ) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -160,9 +157,13 @@ class PastAppointmentCard extends StatelessWidget {
           // ),
           Row(
             children: [
-              SizedBox(width: 10,),
+              SizedBox(
+                width: 10,
+              ),
               buttonBooking(context, size),
-              SizedBox(width: 60,),
+              SizedBox(
+                width: 60,
+              ),
               buttonRating(context, size)
             ],
           ),
@@ -175,14 +176,13 @@ class PastAppointmentCard extends StatelessWidget {
     return Container(
       // alignment: Alignment.center,
       // margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-      child:
-      RaisedButton(
+      child: RaisedButton(
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => StepperReserve()));
         },
         shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
         textColor: Colors.white,
         padding: const EdgeInsets.all(0),
         child: Container(
@@ -192,8 +192,10 @@ class PastAppointmentCard extends StatelessWidget {
           decoration: new BoxDecoration(
             borderRadius: BorderRadius.circular(80.0),
             gradient: new LinearGradient(colors: [
-              Color.fromARGB(255, 255, 136, 31),
-              Color.fromARGB(255, 255, 136, 31)
+              Constants.PRIMARY_COLOR,
+              Constants.HEAVY_BLUE
+              // Color.fromARGB(255, 255, 136, 31),
+              // Color.fromARGB(255, 255, 136, 31)
             ]),
           ),
           padding: const EdgeInsets.all(0),
@@ -219,7 +221,7 @@ class PastAppointmentCard extends StatelessWidget {
         onPressed: () {
           showDialog(
               context: context,
-              builder: (BuildContext context){
+              builder: (BuildContext context) {
                 return AlertDialog(
                   insetPadding: EdgeInsets.all(10),
                   content: Stack(
@@ -233,27 +235,51 @@ class PastAppointmentCard extends StatelessWidget {
                           key: _formKey,
                           child: Column(
                             children: [
-                              Text('Đánh giá', style: TextStyle(fontSize: 35, color: Colors.lightBlue, fontWeight: FontWeight.bold),),
-                              SizedBox(height: 18,),
+                              Text(
+                                'Đánh giá',
+                                style: TextStyle(
+                                    fontSize: 35,
+                                    color: Colors.lightBlue,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 18,
+                              ),
                               _commentRating(rating),
-                              SizedBox(height: 25,),
-                              Text('Comment', style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold), ),
-                              SizedBox(height: 15,),
+                              SizedBox(
+                                height: 25,
+                              ),
+                              Text(
+                                'Bình luận',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
                               TextFormField(
-                                maxLines: 3,decoration:
-                              InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5))
+                                maxLines: 3,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5))),
                               ),
+                              SizedBox(
+                                height: 25,
                               ),
-                              SizedBox(height: 25,),
                               Row(
                                 children: [
-                                  SizedBox(width: 5,),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
                                   RaisedButton(
-                                    onPressed: ()  => Navigator.of(context).pop(),
-                                    shape:
-                                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(80.0)),
                                     textColor: Colors.white,
                                     padding: const EdgeInsets.all(0),
                                     child: Container(
@@ -261,27 +287,32 @@ class PastAppointmentCard extends StatelessWidget {
                                       height: 50.0,
                                       width: size.width * 0.25,
                                       decoration: new BoxDecoration(
-                                        borderRadius: BorderRadius.circular(80.0),
+                                        borderRadius:
+                                            BorderRadius.circular(80.0),
                                         gradient: new LinearGradient(colors: [
-                                          Color.fromARGB(255, 255, 136, 31),
-                                          Color.fromARGB(255, 255, 136, 31)
+                                          Constants.PRIMARY_COLOR,
+                                          Constants.HEAVY_BLUE
+                                          // Color.fromARGB(255, 255, 136, 31),
+                                          // Color.fromARGB(255, 255, 136, 31)
                                         ]),
                                       ),
                                       padding: const EdgeInsets.all(0),
                                       child: Text(
                                         "Hủy bỏ",
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 30,),
+                                  SizedBox(
+                                    width: 30,
+                                  ),
                                   RaisedButton(
-                                    onPressed: () {
-
-                                    },
-                                    shape:
-                                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                                    onPressed: () {},
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(80.0)),
                                     textColor: Colors.white,
                                     padding: const EdgeInsets.all(0),
                                     child: Container(
@@ -289,17 +320,21 @@ class PastAppointmentCard extends StatelessWidget {
                                       height: 50.0,
                                       width: size.width * 0.25,
                                       decoration: new BoxDecoration(
-                                        borderRadius: BorderRadius.circular(80.0),
+                                        borderRadius:
+                                            BorderRadius.circular(80.0),
                                         gradient: new LinearGradient(colors: [
-                                          Color.fromARGB(255, 255, 136, 31),
-                                          Color.fromARGB(255, 255, 136, 31)
+                                          Constants.PRIMARY_COLOR,
+                                          Constants.HEAVY_BLUE
+                                          // Color.fromARGB(255, 255, 136, 34),
+                                          // Color.fromARGB(255, 255, 177, 41)
                                         ]),
                                       ),
                                       padding: const EdgeInsets.all(0),
                                       child: Text(
                                         "Cập nhật",
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                   ),
@@ -312,11 +347,10 @@ class PastAppointmentCard extends StatelessWidget {
                     ],
                   ),
                 );
-              }
-          );
+              });
         },
         shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
         textColor: Colors.white,
         padding: const EdgeInsets.all(0),
         child: Container(
@@ -326,8 +360,10 @@ class PastAppointmentCard extends StatelessWidget {
           decoration: new BoxDecoration(
             borderRadius: BorderRadius.circular(80.0),
             gradient: new LinearGradient(colors: [
-              Color.fromARGB(255, 255, 136, 31),
-              Color.fromARGB(255, 255, 136, 31)
+              Constants.PRIMARY_COLOR,
+              Constants.HEAVY_BLUE
+              // Color.fromARGB(255, 255, 136, 34),
+              // Color.fromARGB(255, 255, 177, 41)
             ]),
           ),
           padding: const EdgeInsets.all(0),
@@ -350,11 +386,10 @@ class PastAppointmentCard extends StatelessWidget {
       itemSize: 40,
       itemCount: 5,
       itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-      itemBuilder: (context, _) =>
-          Icon(
-            Icons.star,
-            color: Colors.amber,
-          ),
+      itemBuilder: (context, _) => Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
       onRatingUpdate: null,
     );
   }
@@ -368,11 +403,10 @@ class PastAppointmentCard extends StatelessWidget {
       itemSize: 40,
       itemCount: 5,
       itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-      itemBuilder: (context, _) =>
-          Icon(
-            Icons.star,
-            color: Colors.amber,
-          ),
+      itemBuilder: (context, _) => Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
       onRatingUpdate: (rating) {
         rating = rating;
         return rating;
@@ -380,4 +414,3 @@ class PastAppointmentCard extends StatelessWidget {
     );
   }
 }
-

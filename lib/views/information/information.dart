@@ -141,8 +141,8 @@ class _MyInformationPageState extends State<MyInformationPage> {
                     decoration: new BoxDecoration(
                         borderRadius: BorderRadius.circular(80.0),
                         gradient: new LinearGradient(colors: [
-                          Color.fromARGB(255, 255, 136, 31),
-                          Color.fromARGB(255, 255, 136, 31)
+                          Color.fromARGB(255, 255, 136, 34),
+                          Color.fromARGB(255, 255, 177, 41)
                         ])),
                     padding: const EdgeInsets.all(0),
                     child: Text(
