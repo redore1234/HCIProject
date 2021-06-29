@@ -62,6 +62,51 @@ class Home extends StatelessWidget {
     );
   }
 
+  Widget _createHotServiceCard(String imageRef, String title, String nameClinic, String description, double rating,BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(10.0),
+        color: Colors.white,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: new BorderRadius.all(const Radius.circular(12)),
+                  color: Colors.lightBlueAccent,
+                ),
+                width: 160.0,
+                child: Image.asset(Constants.IMAGE_FOLDER_REF + imageRef),
+              ),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            SizedBox(height: 8.0,),
+            Text(title,
+              style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8.0,),
+            Text('Tại ' + nameClinic,
+              style: TextStyle(fontSize: 15, color: Constants.GRAY),
+            ),
+            SizedBox(height: 8.0,),
+            Text(description),
+            SizedBox(height: 8.0,),
+            _buildRatingBar(rating),
+            SizedBox(height: 8.0,),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _createNewsCard(String imageRef, String title, BuildContext context) {
 //    class Clinic{
 //    String name;
@@ -198,7 +243,7 @@ class Home extends StatelessWidget {
               // discount session
               // horizontal list
               Container(
-                height: 110.0,
+                height: 130.0,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
@@ -227,7 +272,7 @@ class Home extends StatelessWidget {
                                 child: Text("12/7/2021",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 12.0)),
-                              )
+                              ),
                             ],
                           ),
                           Row(
@@ -249,6 +294,12 @@ class Home extends StatelessWidget {
                                         color: Colors.white, fontSize: 24.0)),
                               )
                             ],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(6.0),
+                            child: Text('Nha khoa Vinh sơn',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15.0)),
                           ),
                         ],
                       ),
@@ -288,6 +339,12 @@ class Home extends StatelessWidget {
                                         color: Colors.white, fontSize: 12.0)),
                               )
                             ],
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(6.0),
+                            child: Text('Nha khoa Kim',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15.0)),
                           ),
                         ],
                       ),
@@ -341,6 +398,12 @@ class Home extends StatelessWidget {
                               )
                             ],
                           ),
+                          Padding(
+                            padding: EdgeInsets.all(6.0),
+                            child: Text('Nha khoa Nam Á',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15.0)),
+                          ),
                         ],
                       ),
                     ),
@@ -352,7 +415,31 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ),
-
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Text(
+                  "Dịch vụ nổi bật",
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              SizedBox(height: 10,),
+              Container(
+                height: 220,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    _createHotServiceCard('cay-ghep-implant.jpg', 'CẤY GHÉP IMPLANT', 'nha khoa Đại Nam', 'Giải pháp tối ưu cho người mất răng', 4, context),
+                    SizedBox(width: 10,),
+                    _createHotServiceCard('khoaThammi.jpg', 'Răng sứ thẩm mĩ', 'nha khoa Vĩnh Sơn', 'Biến nụ cười bạn trở nên tỏa sáng', 4, context),
+                    SizedBox(width: 10,),
+                    _createHotServiceCard('niengrang.jpg', 'Niềng răng dây sắt', 'nha khoa Nam Á', 'Giải phát tối ưu khắc phụ khuyết điểm', 4, context),
+                    SizedBox(width: 10,),
+                  ],
+                ),
+              ),
               // bottom box
               SizedBox(
                 height: 80,
