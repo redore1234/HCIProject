@@ -59,7 +59,7 @@ class Home extends StatelessWidget {
   }
 
   Widget _createHotServiceCard(String imageRef, String title, String nameClinic,
-      String description, double rating, BuildContext context) {
+      String description, double rating,String price, BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
@@ -76,7 +76,6 @@ class Home extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: new BorderRadius.all(const Radius.circular(12)),
-                  color: Colors.lightBlueAccent,
                 ),
                 width: 160.0,
                 child: Image.asset(Constants.IMAGE_FOLDER_REF + imageRef),
@@ -85,19 +84,20 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
-            SizedBox(
-              height: 8.0,
-            ),
-            Text(
-              title,
-              style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 8.0,
-            ),
-            Text(
-              'Tại ' + nameClinic,
-              style: TextStyle(fontSize: 15, color: Constants.GRAY),
+            Column(
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 8.0,
+                ),
+                Text(
+                  'Tại ' + nameClinic,
+                  style: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
             SizedBox(
               height: 8.0,
@@ -106,6 +106,8 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 8.0,
             ),
+            Text('Giá: ' + price + ' VND'),
+            SizedBox(height: 8.0,),
             _buildRatingBar(rating),
             SizedBox(
               height: 8.0,
@@ -465,6 +467,7 @@ class Home extends StatelessWidget {
                         'nha khoa Đại Nam',
                         'Giải pháp tối ưu cho người mất răng',
                         4,
+                        '11.750.000',
                         context),
                     SizedBox(
                       width: 10,
@@ -475,6 +478,7 @@ class Home extends StatelessWidget {
                         'nha khoa Vĩnh Sơn',
                         'Biến nụ cười bạn trở nên tỏa sáng',
                         4,
+                        '1.500.000',
                         context),
                     SizedBox(
                       width: 10,
@@ -485,6 +489,7 @@ class Home extends StatelessWidget {
                         'nha khoa Nam Á',
                         'Giải phát tối ưu khắc phụ khuyết điểm',
                         4,
+                        '20.000.000',
                         context),
                     SizedBox(
                       width: 10,
