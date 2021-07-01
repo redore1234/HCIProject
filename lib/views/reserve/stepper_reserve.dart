@@ -43,31 +43,37 @@ class _StepperReserveState extends State<StepperReserve> {
                   new Service(
                       "Bọc răng sứ",
                       Constants.IMAGE_FOLDER_REF + 'icon-boc-rang-su-1.png',
-                      false),
+                      false,
+                      '2.000.000 VND'
+                  ),
                   new Service(
                       "Cấy ghép implant",
                       Constants.IMAGE_FOLDER_REF + 'trong-rang-implant.png',
-                      false),
+                      false,
+                    '11.750.000 VND'
+                  ),
                   new Service(
                       "Niềng răng thẩm mỹ",
                       Constants.IMAGE_FOLDER_REF + 'nieng-rang-tham-my.png',
-                      false),
+                      false,
+                      '18.000.000'
+                  ),
                   new Service("Mặt dán sứ Veneer",
-                      Constants.IMAGE_FOLDER_REF + 'rang-su-veneer.png', false),
+                      Constants.IMAGE_FOLDER_REF + 'rang-su-veneer.png', false, '8.000.000 VND'),
                   new Service(
                       "Tẩy trắng răng",
                       Constants.IMAGE_FOLDER_REF + 'icon-tay-trang-rang-1.png',
-                      false),
+                      false, '200.000 VND'),
                   new Service(
                       "Nhổ răng khôn",
                       Constants.IMAGE_FOLDER_REF + 'icon-nho-rang-khon-1.png',
-                      false),
+                      false, '1.000.000 VND'),
                   new Service(
                       "Bệnh lý nha chu",
                       Constants.IMAGE_FOLDER_REF + 'icon-benh-ly-nha-chu.png',
-                      false),
+                      false , '700.000 VND'),
                   new Service("Điều trị tủy",
-                      Constants.IMAGE_FOLDER_REF + 'dieu-tri-tuy.png', false),
+                      Constants.IMAGE_FOLDER_REF + 'dieu-tri-tuy.png', false , '1.500.000 VND'),
                 ],
               ),
               isActive: _currentStep >= 0,

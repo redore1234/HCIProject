@@ -6,7 +6,8 @@ class Service {
   String title;
   String images;
   bool value;
-  Service(this.title, this.images, this.value);
+  String price;
+  Service(this.title, this.images, this.value, this.price);
   @override
   String toString() {
     // TODO: implement toString
@@ -36,15 +37,29 @@ class _ServiceItemListState extends State<ServiceItemList> {
         child: Image.asset(service.images),
       ),
       title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Expanded(child: Text(service.title)),
-          Checkbox(
+          Container(
+            height: 35,
+            child:
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(child: Text(service.title)),
+                SizedBox(height: 4,),
+                Expanded(child: Text(service.price)),
+              ],
+            ),
+          ),
+          Container(
+            child: Checkbox(
               value: service.value,
               onChanged: (bool value) {
                 setState(() {
                   service.value = value;
                 });
               }),
+          ),
         ],
       ),
     );
