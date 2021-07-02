@@ -58,10 +58,8 @@ class Home extends StatelessWidget {
     );
   }
 
-
-
   Widget _createHotServiceCard(String imageRef, String title, String nameClinic,
-      String description, double rating,String price, BuildContext context) {
+      String description, double rating, String price, BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
@@ -109,7 +107,9 @@ class Home extends StatelessWidget {
               height: 8.0,
             ),
             Text('Giá: ' + price + ' VND'),
-            SizedBox(height: 8.0,),
+            SizedBox(
+              height: 8.0,
+            ),
             _buildRatingBar(rating),
             SizedBox(
               height: 8.0,
@@ -120,7 +120,8 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget _createNewsCard(String imageRef, String title, BuildContext context, {List<String> discountTagStrings}) {
+  Widget _createNewsCard(String imageRef, String title, BuildContext context,
+      {List<String> discountTagStrings}) {
 //    class Clinic{
 //    String name;
 //    String phone;
@@ -131,16 +132,16 @@ class Home extends StatelessWidget {
 //    double totalRating;
 //    Clinic(this.image, this.name, this.phone, this.email, this.description, this.address, this.totalRating);
 //    }
-  if(discountTagStrings == null) {
-    discountTagStrings = [];
-  }
+    if (discountTagStrings == null) {
+      discountTagStrings = [];
+    }
     var sampleClinic = new Clinic(
         "hop1.jpg",
         title,
         "1234-5678",
         "clinic@gmail.com",
         "Phòng khám dược trang bị cơ sở vật chất hiện đại, cùng với đội ngũ nhân viên có tay nghề cao luôn sẵn sàng phục vụ quý khách",
-        "123 Phạm Văng Đồng, phường TCH, quận Thủ Đức",
+        "123 Phạm Văn Đồng, phường TCH, quận Thủ Đức",
         4.0);
     return GestureDetector(
       onTap: () {
@@ -183,7 +184,12 @@ class Home extends StatelessWidget {
             ),
             _buildRatingBar(4.0),
             // ignore: unused_local_variable
-            for ( var i in discountTagStrings ) Text(i.toString(), style: TextStyle(fontSize: 12.5, backgroundColor: Color(0xffffdfca)),),
+            for (var i in discountTagStrings)
+              Text(
+                i.toString(),
+                style: TextStyle(
+                    fontSize: 12.5, backgroundColor: Color(0xffffdfca)),
+              ),
 //            Text("Trám răng từ 400.000đ\nchỉ còn 350.000đ", style: TextStyle(fontSize: 12.5, backgroundColor: Color(0xffffdfca)),)
           ],
         ),
@@ -286,14 +292,38 @@ class Home extends StatelessWidget {
 //                    shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop3.jpg",
-                        "Nha khoa Ngân Hà", context, discountTagStrings: ["Tẩy răng từ 200.000đ\nchỉ còn 150.000đ"], ),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop4.jpg",
-                        "Nha khoa Vĩnh Phúc", context, discountTagStrings: ["Cạo vôi răng từ 400.000đ\nchỉ còn 350.000đ"],),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop3.jpg",
-                        "Nha khoa C", context, discountTagStrings: ["Trám răng từ 400.000đ\nchỉ còn 350.000đ"],),
-                    _createNewsCard(Constants.IMAGE_FOLDER_REF + "hop4.jpg",
-                        "Nha khoa D", context, discountTagStrings: ["Cạo vôi răng từ 400.000đ\nchỉ còn 350.000đ"],),
+                    _createNewsCard(
+                      Constants.IMAGE_FOLDER_REF + "hop3.jpg",
+                      "Nha khoa Ngân Hà",
+                      context,
+                      discountTagStrings: [
+                        "Tẩy răng từ 200.000đ\nchỉ còn 150.000đ"
+                      ],
+                    ),
+                    _createNewsCard(
+                      Constants.IMAGE_FOLDER_REF + "hop4.jpg",
+                      "Nha khoa Vĩnh Phúc",
+                      context,
+                      discountTagStrings: [
+                        "Cạo vôi răng từ 400.000đ\nchỉ còn 350.000đ"
+                      ],
+                    ),
+                    _createNewsCard(
+                      Constants.IMAGE_FOLDER_REF + "hop3.jpg",
+                      "Nha khoa C",
+                      context,
+                      discountTagStrings: [
+                        "Trám răng từ 400.000đ\nchỉ còn 350.000đ"
+                      ],
+                    ),
+                    _createNewsCard(
+                      Constants.IMAGE_FOLDER_REF + "hop4.jpg",
+                      "Nha khoa D",
+                      context,
+                      discountTagStrings: [
+                        "Cạo vôi răng từ 400.000đ\nchỉ còn 350.000đ"
+                      ],
+                    ),
                   ],
                 ),
               ),

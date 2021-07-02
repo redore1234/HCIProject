@@ -1,3 +1,4 @@
+import 'package:clinicbookingapp/views/appointment_detail/appointment_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
@@ -6,6 +7,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 class NextAppointmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var sampleAppointment = new Appointment(
+      "Huy",
+      "099125423",
+      "Nha khoa Thủ Đức",
+      "123 Phạm Văn Đồng, phường TCH, quận Thủ Đức",
+      "20/7/2021 - 18:00",
+      "Bọc răng sứ",
+    );
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -45,12 +54,12 @@ class NextAppointmentCard extends StatelessWidget {
             ),
 
             // location of clinic
-            Text("\u2022 Địa chỉ: 123 Nguyen Hue, Q. ABC - TP. HCM"),
+            Text("\u2022 Địa chỉ: 123 Phạm Văn Đồng, phường TCH, quận Thủ Đức"),
             SizedBox(
               height: 8,
             ),
             // time of the next appointment
-            Text("\u2022 Thời gian: 15 Dec 2021"),
+            Text("\u2022 Thời gian: 20/7/2021 - 18:00"),
             SizedBox(
               height: 8,
             ),
@@ -69,7 +78,27 @@ class NextAppointmentCard extends StatelessWidget {
             //   height: 8,
             // ),
 
-
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              child: GestureDetector(
+                onTap: () => {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              AppoinmentDetailScreen(sampleAppointment)))
+                },
+                child: Text(
+                  "Xem chi tiết lịch hẹn",
+                  style: TextStyle(
+                    fontSize: 14,
+                    decoration: TextDecoration.underline,
+                    // color: Color(0xFF2661FA)
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

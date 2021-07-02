@@ -18,7 +18,7 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Thông tin đặt lịch"),
+        title: Text("Xác nhận thông tin đặt lịch"),
         centerTitle: true,
         shadowColor: Colors.white,
         leading: IconButton(
@@ -148,7 +148,7 @@ class _InfomationDetailScreenState extends State<InfomationDetailScreen> {
                           Container(
                             alignment: Alignment.center,
                             margin: const EdgeInsets.only(left: 5, top: 30),
-                            child: Text("30/6/2021" + " - " + "18:00"),
+                            child: Text("20/7/2021" + " - " + "18:00"),
                           ),
                         ],
                       ),

@@ -44,36 +44,42 @@ class _StepperReserveState extends State<StepperReserve> {
                       "Bọc răng sứ",
                       Constants.IMAGE_FOLDER_REF + 'icon-boc-rang-su-1.png',
                       false,
-                      '2.000.000 VND'
-                  ),
+                      '2.000.000 VND'),
                   new Service(
                       "Cấy ghép implant",
                       Constants.IMAGE_FOLDER_REF + 'trong-rang-implant.png',
                       false,
-                    '11.750.000 VND'
-                  ),
+                      '11.750.000 VND'),
                   new Service(
                       "Niềng răng thẩm mỹ",
                       Constants.IMAGE_FOLDER_REF + 'nieng-rang-tham-my.png',
                       false,
-                      '18.000.000'
-                  ),
-                  new Service("Mặt dán sứ Veneer",
-                      Constants.IMAGE_FOLDER_REF + 'rang-su-veneer.png', false, '8.000.000 VND'),
+                      '18.000.000'),
+                  new Service(
+                      "Mặt dán sứ Veneer",
+                      Constants.IMAGE_FOLDER_REF + 'rang-su-veneer.png',
+                      false,
+                      '8.000.000 VND'),
                   new Service(
                       "Tẩy trắng răng",
                       Constants.IMAGE_FOLDER_REF + 'icon-tay-trang-rang-1.png',
-                      false, '200.000 VND'),
+                      false,
+                      '200.000 VND'),
                   new Service(
                       "Nhổ răng khôn",
                       Constants.IMAGE_FOLDER_REF + 'icon-nho-rang-khon-1.png',
-                      false, '1.000.000 VND'),
+                      false,
+                      '1.000.000 VND'),
                   new Service(
                       "Bệnh lý nha chu",
                       Constants.IMAGE_FOLDER_REF + 'icon-benh-ly-nha-chu.png',
-                      false , '700.000 VND'),
-                  new Service("Điều trị tủy",
-                      Constants.IMAGE_FOLDER_REF + 'dieu-tri-tuy.png', false , '1.500.000 VND'),
+                      false,
+                      '700.000 VND'),
+                  new Service(
+                      "Điều trị tủy",
+                      Constants.IMAGE_FOLDER_REF + 'dieu-tri-tuy.png',
+                      false,
+                      '1.500.000 VND'),
                 ],
               ),
               isActive: _currentStep >= 0,
@@ -109,7 +115,6 @@ class _StepperReserveState extends State<StepperReserve> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-
           _currentStep > 0
               ? TextButton(
                   onPressed: onStepCancel,
@@ -121,12 +126,12 @@ class _StepperReserveState extends State<StepperReserve> {
               : SizedBox.shrink(),
           _currentStep < 2
               ? TextButton(
-            onPressed: onStepContinue,
-            child: const Text(
-              'Tiếp tục',
-              style: TextStyle(fontSize: 15),
-            ),
-          )
+                  onPressed: onStepContinue,
+                  child: const Text(
+                    'Tiếp tục',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                )
               : SizedBox.shrink(),
         ],
       ),
