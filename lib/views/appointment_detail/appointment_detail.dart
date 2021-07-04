@@ -10,12 +10,14 @@ class Appointment {
   String addressClinic;
   String time;
   String service;
+
   Appointment(this.name, this.phone, this.nameClinic, this.addressClinic,
       this.time, this.service);
 }
 
 class AppoinmentDetailScreen extends StatefulWidget {
   final Appointment appointment;
+
   AppoinmentDetailScreen(Appointment appointment)
       : appointment = appointment,
         super(key: new ObjectKey(appointment));
@@ -25,10 +27,12 @@ class AppoinmentDetailScreen extends StatefulWidget {
       _AppoinmentDetailScreenState(appointment);
 }
 
-class _AppoinmentDetailScreenState extends State<AppoinmentDetailScreen>{
+class _AppoinmentDetailScreenState extends State<AppoinmentDetailScreen> {
   final Appointment appointment;
   Reason _reason = Reason.onBussiness;
+
   _AppoinmentDetailScreenState(this.appointment);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -243,14 +247,12 @@ class _AppoinmentDetailScreenState extends State<AppoinmentDetailScreen>{
                                 children: [
                                   Container(
                                     width: double.infinity,
-                                    height: 450,
                                     child: ReasonRadio(),
                                   ),
                                 ],
                               ),
                             );
-                          }
-                      );
+                          });
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -286,138 +288,161 @@ class ReasonRadio extends StatefulWidget {
 class _ReasonRadioState extends State<ReasonRadio> {
   Reason _character = Reason.onBussiness;
 
+  bool isVisible = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text('Cho chúng tôi biết lý do', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-        SizedBox(height: 10,),
-        Text('Chọn các lý do sau'),
-        RadioListTile<Reason>(
-          title: Text('Bận công việc riêng'),
-          value: Reason.onBussiness,
-          groupValue: _character,
-          onChanged: (Reason value) {
-            setState(() {
-              _character = value;
-            });
-          },
-        ),
-        RadioListTile<Reason>(
-          title: const Text('Nhấn đặt nhầm ngày'),
-          value: Reason.wrongDay,
-          groupValue: _character,
-          onChanged: (Reason value) {
-            setState(() {
-              _character = value;
-            });
-          },
-        ),
-        RadioListTile<Reason>(
-          title: const Text('Nhấn đặt nhầm dịch vụ'),
-          value: Reason.wrongService,
-          groupValue: _character,
-          onChanged: (Reason value) {
-            setState(() {
-              _character = value;
-            });
-          },
-        ),
-        RadioListTile<Reason>(
-          title: const Text('Khác'),
-          value: Reason.orther,
-          groupValue: _character,
-          onChanged: (Reason value) {
-            setState(() {
-              _character = value;
-            });
-          },
-        ),
-      SizedBox(height: 10,),
-      TextFormField(
-        maxLines: 3,
-        decoration: InputDecoration(
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(5)
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          Text('Chọn các lý do sau'),
+          RadioListTile<Reason>(
+            title: Text('Bận công việc riêng'),
+            value: Reason.onBussiness,
+            groupValue: _character,
+            onChanged: (Reason value) {
+              setState(() {
+                _character = value;
+              });
+              if (value != Reason.orther) {
+                setState(() {
+                  isVisible = false;
+                });
+              }
+            },
+          ),
+          RadioListTile<Reason>(
+            title: const Text('Đặt nhầm ngày'),
+            value: Reason.wrongDay,
+            groupValue: _character,
+            onChanged: (Reason value) {
+              setState(() {
+                _character = value;
+              });
+              if (value != Reason.orther) {
+                setState(() {
+                  isVisible = false;
+                });
+              }
+            },
+          ),
+          RadioListTile<Reason>(
+            title: const Text('Đặt nhầm dịch vụ'),
+            value: Reason.wrongService,
+            groupValue: _character,
+            onChanged: (Reason value) {
+              setState(() {
+                _character = value;
+                if (value != Reason.orther) {
+                  setState(() {
+                    isVisible = false;
+                  });
+                }
+              });
+            },
+          ),
+          RadioListTile<Reason>(
+            title: const Text('Khác'),
+            value: Reason.orther,
+            groupValue: _character,
+            onChanged: (Reason value) {
+              setState(() {
+                _character = value;
+              });
+              if (value == Reason.orther) {
+                setState(() {
+                  isVisible = true;
+                });
+              } else {
+                setState(() {
+                  isVisible = false;
+                });
+              }
+            },
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Visibility(
+            visible: isVisible,
+            child: TextFormField(
+              maxLines: 3,
+              decoration: InputDecoration(
+                  border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
+                  hintText: 'Xin bạn vui lòng cho biết lí do sau:'),
             ),
-          hintText: 'Nếu chọn Khác, ghi lý do (optional)'
-        ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 25,
+              ),
+              RaisedButton(
+                onPressed: () => Navigator.of(context).pop(),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                textColor: Colors.white,
+                padding: const EdgeInsets.all(0),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50.0,
+                  width: size.width * 0.25,
+                  decoration: new BoxDecoration(
+                    borderRadius: BorderRadius.circular(80.0),
+                    gradient: new LinearGradient(colors: [
+                      Constants.PRIMARY_COLOR,
+                      Constants.HEAVY_BLUE
+                      // Color.fromARGB(255, 255, 136, 31),
+                      // Color.fromARGB(255, 255, 136, 31)
+                    ]),
+                  ),
+                  padding: const EdgeInsets.all(0),
+                  child: Text(
+                    "Hủy bỏ",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 30,
+              ),
+              RaisedButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                textColor: Colors.white,
+                padding: const EdgeInsets.all(0),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50.0,
+                  width: size.width * 0.25,
+                  decoration: new BoxDecoration(
+                    borderRadius: BorderRadius.circular(80.0),
+                    gradient: new LinearGradient(colors: [
+                      Constants.PRIMARY_COLOR,
+                      Constants.HEAVY_BLUE
+                      // Color.fromARGB(255, 255, 136, 34),
+                      // Color.fromARGB(255, 255, 177, 41)
+                    ]),
+                  ),
+                  padding: const EdgeInsets.all(0),
+                  child: Text(
+                    "Gửi",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-      SizedBox(height: 10,),
-      Row(
-          children: [
-            SizedBox(
-              width: 25,
-            ),
-            RaisedButton(
-              onPressed: () =>
-                  Navigator.of(context).pop(),
-              shape: RoundedRectangleBorder(
-                  borderRadius:
-                  BorderRadius.circular(80.0)),
-              textColor: Colors.white,
-              padding: const EdgeInsets.all(0),
-              child: Container(
-                alignment: Alignment.center,
-                height: 50.0,
-                width: size.width * 0.25,
-                decoration: new BoxDecoration(
-                  borderRadius:
-                  BorderRadius.circular(80.0),
-                  gradient: new LinearGradient(colors: [
-                    Constants.PRIMARY_COLOR,
-                    Constants.HEAVY_BLUE
-                    // Color.fromARGB(255, 255, 136, 31),
-                    // Color.fromARGB(255, 255, 136, 31)
-                  ]),
-                ),
-                padding: const EdgeInsets.all(0),
-                child: Text(
-                  "Hủy bỏ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 30,
-            ),
-            RaisedButton(
-              onPressed: () {},
-              shape: RoundedRectangleBorder(
-                  borderRadius:
-                  BorderRadius.circular(80.0)),
-              textColor: Colors.white,
-              padding: const EdgeInsets.all(0),
-              child: Container(
-                alignment: Alignment.center,
-                height: 50.0,
-                width: size.width * 0.25,
-                decoration: new BoxDecoration(
-                  borderRadius:
-                  BorderRadius.circular(80.0),
-                  gradient: new LinearGradient(colors: [
-                    Constants.PRIMARY_COLOR,
-                    Constants.HEAVY_BLUE
-                    // Color.fromARGB(255, 255, 136, 34),
-                    // Color.fromARGB(255, 255, 177, 41)
-                  ]),
-                ),
-                padding: const EdgeInsets.all(0),
-                child: Text(
-                  "Gửi",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
