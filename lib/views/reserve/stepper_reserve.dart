@@ -54,7 +54,7 @@ class _StepperReserveState extends State<StepperReserve> {
                       "Niềng răng thẩm mỹ",
                       Constants.IMAGE_FOLDER_REF + 'nieng-rang-tham-my.png',
                       false,
-                      '18.000.000'),
+                      '18.000.000 VND'),
                   new Service(
                       "Mặt dán sứ Veneer",
                       Constants.IMAGE_FOLDER_REF + 'rang-su-veneer.png',
