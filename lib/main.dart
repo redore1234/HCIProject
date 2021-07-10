@@ -1,4 +1,6 @@
 import 'package:clinicbookingapp/views/detail/detail-clinic.dart';
+import 'package:clinicbookingapp/views/forget_password/forget-password.dart';
+import 'package:clinicbookingapp/views/forget_password/otp.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/views/global/main-tab-bar.dart';
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       home: new CupertinoApp(
         home: MainTabBar(),
+        //VerifyPhoneOTP(),
         localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
           DefaultMaterialLocalizations.delegate,
           DefaultWidgetsLocalizations.delegate,

@@ -19,4 +19,5 @@ class Constants {
   static const String HOME_ICON_REF = "assets/icons/home.svg";
   static const String CALENDAR_ICON_REF = "assets/icons/calendar.svg";
   static const String MORE_ICON_REF = "assets/icons/more.svg";
+  static const String DENTAL_CLINIC_REF = "assets/images/dental_clinic_logo.jpg";
 }

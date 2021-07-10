@@ -1,4 +1,5 @@
 import 'package:clinicbookingapp/helpers/constants.dart';
+import 'package:clinicbookingapp/views/forget_password/forget-password.dart';
 import 'package:clinicbookingapp/views/global/background.dart';
 import 'package:clinicbookingapp/views/register/register.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,9 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                 child: GestureDetector(
-                  onTap: () => {},
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>VerifyPhoneScreen()));
+                  },
                   child: Text(
                     "Lấy lại mật khẩu",
                     style: TextStyle(
