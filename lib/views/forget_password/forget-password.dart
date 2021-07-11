@@ -1,23 +1,22 @@
 import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'otp.dart';
 
-class VerifyPhoneScreen extends StatefulWidget{
+class VerifyPhoneScreen extends StatefulWidget {
   VerifyPhoneScreen({Key key}) : super(key: key);
 
   @override
   _VerifyPhoneScreenState createState() => _VerifyPhoneScreenState();
 }
 
-class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
+class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
   GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
   ScrollController scrollController = ScrollController();
 
   @override
-  void initSate(){
+  void initSate() {
     super.initState();
     phoneVerifyScreen();
   }
@@ -32,11 +31,13 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.black,
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('Quên mật khẩu',),
+        title: Text(
+          'Quên mật khẩu',
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -52,13 +53,17 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Container(
                       height: 180,
                       width: 180,
                       child: Image.asset(Constants.DENTAL_CLINIC_REF),
                     ),
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Text(
                       'Xác nhận OTP',
                       style: TextStyle(
@@ -67,13 +72,15 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40.0),
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
-                          text: "Chúng tui sẽ gửi",
+                          text: "Chúng tôi sẽ gửi",
                           style: TextStyle(
                             color: Colors.black.withOpacity(0.4),
                             fontWeight: FontWeight.normal,
@@ -100,14 +107,18 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
                         ),
                       ),
                     ),
-                    SizedBox(height: 40,),
+                    SizedBox(
+                      height: 40,
+                    ),
                     Text(
                       'Số điện thoại của bạn ....',
                       style: TextStyle(
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 50),
                       child: Container(
@@ -152,7 +163,8 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
                                       width: 0.5,
                                     ),
                                   ),
-                                  contentPadding: EdgeInsets.symmetric(vertical: 11.5),
+                                  contentPadding:
+                                      EdgeInsets.symmetric(vertical: 11.5),
                                   hintText: 'Số điện thoại',
                                   hintStyle: TextStyle(
                                     color: Colors.black.withOpacity(0.2),
@@ -165,23 +177,26 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
                         ),
                       ),
                     ),
-                    SizedBox(height: 50,),
+                    SizedBox(
+                      height: 50,
+                    ),
                     GestureDetector(
-                      onTap: (){
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => VerifyPhoneOTP())
-                        );
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VerifyPhoneOTP()));
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 10.0),
-                        width: size.width*0.9,
+                        width: size.width * 0.9,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6.0),
                           color: Colors.indigo,
                         ),
                         child: Text(
-                          'Lấy OTP',
+                          'Gửi mã OTP',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -200,14 +215,14 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen>{
     );
   }
 
-  void phoneVerifyScreen(){
+  void phoneVerifyScreen() {
     SystemChrome.setSystemUIOverlayStyle(
-     SystemUiOverlayStyle(
-       systemNavigationBarColor: Colors.white,
-       statusBarColor: Colors.white,
-       systemNavigationBarIconBrightness: Brightness.dark,
-       statusBarBrightness: Brightness.dark,
-     ),
+      SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.white,
+        statusBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.dark,
+      ),
     );
   }
 }

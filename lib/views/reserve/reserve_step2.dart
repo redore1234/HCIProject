@@ -41,24 +41,25 @@ class _ServiceItemListState extends State<ServiceItemList> {
         children: <Widget>[
           Container(
             height: 35,
-            child:
-            Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(child: Text(service.title)),
-                SizedBox(height: 4,),
+                SizedBox(
+                  height: 4,
+                ),
                 Expanded(child: Text(service.price)),
               ],
             ),
           ),
           Container(
             child: Checkbox(
-              value: service.value,
-              onChanged: (bool value) {
-                setState(() {
-                  service.value = value;
-                });
-              }),
+                value: service.value,
+                onChanged: (bool value) {
+                  setState(() {
+                    service.value = value;
+                  });
+                }),
           ),
         ],
       ),
@@ -97,7 +98,7 @@ class _ServiceListState extends State<ServiceList> {
                   }).toList(),
                 )),
                 SizedBox(
-                  height: 50,
+                  height: 30,
                 )
               ],
             ),

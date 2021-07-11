@@ -3,23 +3,23 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class VerifyPhoneOTP extends StatefulWidget{
-  VerifyPhoneOTP ({Key key}) : super(key: key);
+class VerifyPhoneOTP extends StatefulWidget {
+  VerifyPhoneOTP({Key key}) : super(key: key);
   @override
   _VerifyPhoneOTPState createState() => _VerifyPhoneOTPState();
 }
 
-class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
+class _VerifyPhoneOTPState extends State<VerifyPhoneOTP> {
   GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
   ScrollController scrollController = ScrollController();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     phoneVerifyScreen();
   }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -30,11 +30,13 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.black,
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('Nhập mã OTP',),
+        title: Text(
+          'Nhập mã OTP',
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -49,13 +51,17 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
                 physics: ScrollPhysics(),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Container(
                       height: 180,
                       width: 180,
                       child: Image.asset(Constants.DENTAL_CLINIC_REF),
                     ),
-                    SizedBox(height: 24,),
+                    SizedBox(
+                      height: 24,
+                    ),
                     Text(
                       'Xác thực mã OTP',
                       style: TextStyle(
@@ -64,28 +70,31 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                        text: 'Nhập mã OTP ',
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.4),
-                          fontSize: 15.5,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: '+84937145660',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15.5,
-                            ),
+                          text: 'Nhập mã OTP ',
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(0.4),
+                            fontSize: 15.5,
                           ),
-                        ]
-                      ),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: '+84937145660',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.5,
+                              ),
+                            ),
+                          ]),
                     ),
-                    SizedBox(height: 24,),
+                    SizedBox(
+                      height: 24,
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 35.0),
                       child: Row(
@@ -94,22 +103,30 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
                             flex: 1,
                             child: PhoneVerifyTextField(),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Expanded(
                             flex: 1,
                             child: PhoneVerifyTextField(),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Expanded(
                             flex: 1,
                             child: PhoneVerifyTextField(),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Expanded(
                             flex: 1,
                             child: PhoneVerifyTextField(),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(
+                            width: 10,
+                          ),
                           Expanded(
                             flex: 1,
                             child: PhoneVerifyTextField(),
@@ -121,34 +138,12 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
                         ],
                       ),
                     ),
-                    SizedBox(height: 24,),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Không nhận được mã OTP? ',
-                        style: TextStyle(
-                          color: Colors.black.withOpacity(0.6),
-                          fontWeight: FontWeight.normal,
-                          fontSize: 15,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Gửi lại',
-                            style: TextStyle(
-                              color: Colors.indigo,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15.0
-                            ),
-                            recognizer: TapGestureRecognizer()..onTap = (){
-                              //Do something
-                            },
-                          )
-                        ],
-                      ),
+                    SizedBox(
+                      height: 24,
                     ),
-                    SizedBox(height: 34,),
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
-                      width: size.width*0.9,
+                      width: size.width * 0.9,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6.0),
@@ -162,7 +157,34 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
                           fontSize: 18,
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        // text: 'Không nhận được mã OTP? ',
+                        // style: TextStyle(
+                        //   color: Colors.black.withOpacity(0.6),
+                        //   fontWeight: FontWeight.normal,
+                        //   fontSize: 15,
+                        // ),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Gửi lại mã OTP',
+                            style: TextStyle(
+                                color: Colors.indigo,
+                                decoration: TextDecoration.underline,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.0),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                //Do something
+                              },
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -173,7 +195,7 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
     );
   }
 
-  void phoneVerifyScreen(){
+  void phoneVerifyScreen() {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         systemNavigationBarColor: Colors.white,
@@ -185,8 +207,8 @@ class _VerifyPhoneOTPState extends State<VerifyPhoneOTP>{
   }
 }
 
-class PhoneVerifyTextField extends StatelessWidget{
-  const PhoneVerifyTextField({Key key}):super(key: key);
+class PhoneVerifyTextField extends StatelessWidget {
+  const PhoneVerifyTextField({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -208,11 +230,8 @@ class PhoneVerifyTextField extends StatelessWidget{
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.indigo),
-
         ),
       ),
     );
   }
-
-
 }

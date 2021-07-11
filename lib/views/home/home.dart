@@ -6,7 +6,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:clinicbookingapp/views/global/shared-component.dart';
-import 'package:clinicbookingapp/views/home/discount-cart.dart';
 
 class Home extends StatelessWidget {
   @override

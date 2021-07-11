@@ -2,8 +2,6 @@ import 'package:clinicbookingapp/helpers/constants.dart';
 import 'package:clinicbookingapp/views/global/background.dart';
 import 'package:clinicbookingapp/views/login/login.dart';
 import 'package:flutter/material.dart';
-//import 'package:profile/components/background.dart';
-//import 'package:profile/screens/login/login.dart';
 
 class RegisterScreen extends StatelessWidget {
   @override

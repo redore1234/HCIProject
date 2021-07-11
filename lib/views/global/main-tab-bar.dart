@@ -1,8 +1,6 @@
-import 'package:clinicbookingapp/views/reserve/stepper_reserve.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinicbookingapp/views/profile/profile-page.dart';
-//import 'package:clinicbookingapp/views/schedule/schedule-page.dart';
 
 import '../home/home.dart';
 import '../../main.dart';
