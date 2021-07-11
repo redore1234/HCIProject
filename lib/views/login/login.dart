@@ -1,4 +1,5 @@
 import 'package:clinicbookingapp/helpers/constants.dart';
+import 'package:clinicbookingapp/views/forget_password/forget-password.dart';
 import 'package:clinicbookingapp/views/global/background.dart';
 import 'package:clinicbookingapp/views/register/register.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: size.height * 0.05),
+              //SizedBox(height: size.height * 0.05),
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
