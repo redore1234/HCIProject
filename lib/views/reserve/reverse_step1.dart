@@ -75,89 +75,54 @@ class _GroupedButtonState extends State<GroupedButton> {
           SizedBox(
             height: 20,
           ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          customRadio("8:00", 0),
-          customRadio("9:00", 1),
-          customRadio("10:00", 2),
-        ],
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          customRadio("11:00", 3),
-          customRadio("12:00", 4),
-          customRadio("14:00", 5),
-        ],
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          customRadio("15:00", 6),
-          customRadio("16:00", 7),
-          customRadio("17:00", 8),
-        ],
-      ),
-      SizedBox(
-        height: 20,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          customRadio("18:00", 9),
-          customRadio("19:00", 10),
-          customRadio("20:00", 11),
-        ],
-      ),
-
-//          Row(
-//            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            children: [
-//              customRadio("7:00 - 8:00", 0),
-//              customRadio("8:00 - 9:00", 1),
-//              customRadio("9:00 - 10:00", 2),
-//            ],
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          Row(
-//            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            children: [
-//              customRadio("13:00 - 14:00", 3),
-//              customRadio("14:00 - 15:00", 4),
-//              customRadio("15:00 - 16:00", 5),
-//            ],
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          Row(
-//            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            children: [
-//              customRadio("16:00 - 17:00", 6),
-//              customRadio("17:00 - 18:00", 7),
-//              customRadio("18:00 - 19:00", 8),
-//            ],
-//          ),
-//          SizedBox(
-//            height: 20,
-//          ),
-//          Row(
-//            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            children: [
-//              customRadio("19:00 - 20:00", 9),
-////              customRadio("19:00", 10),
-////              customRadio("20:00", 11),
-//            ],
-//          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              customRadio("8:00", 0),
+              customRadio("9:00", 1),
+              // customRadio("10:00", 2),
+              disableRadio("10:00")
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // customRadio("11:00", 3),
+              // customRadio("12:00", 4),
+              // customRadio("14:00", 5),
+              customRadio("11:00", 2),
+              customRadio("12:00", 3),
+              customRadio("14:00", 4),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // customRadio("15:00", 6),
+              // customRadio("16:00", 7),
+              // customRadio("17:00", 8),
+              customRadio("15:00", 5),
+              customRadio("16:00", 6),
+              customRadio("17:00", 7),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              customRadio("18:00", 8),
+              disableRadio("19:00"),
+              disableRadio("20:00"),
+            ],
+          ),
         ],
       ),
     );
@@ -179,6 +144,25 @@ class _GroupedButtonState extends State<GroupedButton> {
               style: TextStyle(
                   color:
                       _selectedIndex != index ? Colors.black : Colors.white)),
+        ),
+      ),
+    );
+  }
+
+  Widget disableRadio(String time) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: Container(
+        height: 30,
+        // color: _selectedIndex == index ? Colors.blueAccent : Colors.white,
+        child: TextButton(
+          onPressed: null,
+          child: Text(
+            time,
+            // style: TextStyle(
+            //     color:
+            //         _selectedIndex != index ? Colors.black : Colors.white)
+          ),
         ),
       ),
     );
