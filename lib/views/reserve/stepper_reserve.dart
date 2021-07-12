@@ -80,6 +80,11 @@ class _StepperReserveState extends State<StepperReserve> {
                       Constants.IMAGE_FOLDER_REF + 'dieu-tri-tuy.png',
                       false,
                       '1.500.000 VND'),
+                  new Service(
+                      "Tư vấn khám bệnh",
+                      Constants.IMAGE_FOLDER_REF+'icon-doc1.png',
+                      false,
+                      '0 VND'),
                 ],
               ),
               isActive: _currentStep >= 0,

@@ -34,7 +34,9 @@ class _ServiceItemListState extends State<ServiceItemList> {
     return ListTile(
       onTap: null,
       leading: GestureDetector(
-        child: Image.asset(service.images),
+        child: Container(
+          child: Image.asset(service.images, height: 160, width: 80, ),
+        ),
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
