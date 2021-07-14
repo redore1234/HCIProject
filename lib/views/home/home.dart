@@ -120,7 +120,7 @@ class Home extends StatelessWidget {
   }
 
   Widget _createNewsCard(String imageRef, String title, BuildContext context,
-      {List<String> discountTagStrings}) {
+      {Widget discountTagStrings}) {
 //    class Clinic{
 //    String name;
 //    String phone;
@@ -132,7 +132,7 @@ class Home extends StatelessWidget {
 //    Clinic(this.image, this.name, this.phone, this.email, this.description, this.address, this.totalRating);
 //    }
     if (discountTagStrings == null) {
-      discountTagStrings = [];
+      discountTagStrings = Container();
     }
     var sampleClinic = new Clinic(
         "hop1.jpg",
@@ -183,12 +183,14 @@ class Home extends StatelessWidget {
             ),
             _buildRatingBar(4.0),
             // ignore: unused_local_variable
-            for (var i in discountTagStrings)
-              Text(
-                i.toString(),
-                style: TextStyle(
-                    fontSize: 12.5, backgroundColor: Color(0xffffdfca)),
-              ),
+            discountTagStrings
+
+//            for (var i in discountTagStrings)
+//              Text(
+//                i.toString(),
+//                style: TextStyle(
+//                    fontSize: 12.5, backgroundColor: Color(0xffffdfca)),
+//              ),
 //            Text("Trám răng từ 400.000đ\nchỉ còn 350.000đ", style: TextStyle(fontSize: 12.5, backgroundColor: Color(0xffffdfca)),)
           ],
         ),
@@ -295,33 +297,121 @@ class Home extends StatelessWidget {
                       Constants.IMAGE_FOLDER_REF + "hop3.jpg",
                       "Nha khoa Ngân Hà",
                       context,
-                      discountTagStrings: [
-                        "Tẩy răng từ 200.000đ\nchỉ còn 150.000đ"
-                      ],
+                      discountTagStrings: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(children: [
+                            Text(
+                              "Trám răng giá ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                            Text(
+                              "400.000đ ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca), decoration: TextDecoration.lineThrough),
+                            ),
+
+                          ],),
+                          Row(children: [
+                            Text(
+                              "chỉ còn 350.000đ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                          ],)
+                        ],
+                      ),
                     ),
                     _createNewsCard(
                       Constants.IMAGE_FOLDER_REF + "hop4.jpg",
                       "Nha khoa Vĩnh Phúc",
                       context,
-                      discountTagStrings: [
-                        "Cạo vôi răng từ 400.000đ\nchỉ còn 350.000đ"
-                      ],
+                      discountTagStrings:  Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(children: [
+                            Text(
+                              "Tẩy răng giá ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                            Text(
+                              "200.000đ ",
+                              style: TextStyle(
+                                  fontSize: 12.5, backgroundColor: Color(0xffffdfca), decoration: TextDecoration.lineThrough),
+                            ),
+
+                          ],),
+                          Row(children: [
+                            Text(
+                              "chỉ còn 150.000đ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                          ],)
+                        ],
+                      ),
                     ),
                     _createNewsCard(
                       Constants.IMAGE_FOLDER_REF + "hop3.jpg",
                       "Nha khoa C",
                       context,
-                      discountTagStrings: [
-                        "Trám răng từ 400.000đ\nchỉ còn 350.000đ"
-                      ],
+                      discountTagStrings:  Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(children: [
+                            Text(
+                              "Trám răng giá ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                            Text(
+                              "400.000đ ",
+                              style: TextStyle(
+                                  fontSize: 12.5, backgroundColor: Color(0xffffdfca), decoration: TextDecoration.lineThrough),
+                            ),
+
+                          ],),
+                          Row(children: [
+                            Text(
+                              "chỉ còn 350.000đ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                          ],)
+                        ],
+                      ),
                     ),
                     _createNewsCard(
                       Constants.IMAGE_FOLDER_REF + "hop4.jpg",
                       "Nha khoa D",
                       context,
-                      discountTagStrings: [
-                        "Cạo vôi răng từ 400.000đ\nchỉ còn 350.000đ"
-                      ],
+                      discountTagStrings:  Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(children: [
+                            Text(
+                              "Tẩy răng giá ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                            Text(
+                              "200.000đ ",
+                              style: TextStyle(
+                                  fontSize: 12.5, backgroundColor: Color(0xffffdfca), decoration: TextDecoration.lineThrough),
+                            ),
+
+                          ],),
+                          Row(children: [
+                            Text(
+                              "chỉ còn 150.000đ",
+                              style: TextStyle(
+                                fontSize: 12.5, backgroundColor: Color(0xffffdfca),),
+                            ),
+                          ],)
+                        ],
+                      ),
                     ),
                   ],
                 ),
